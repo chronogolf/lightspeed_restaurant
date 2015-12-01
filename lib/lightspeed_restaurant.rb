@@ -9,6 +9,7 @@ require "lightspeed_restaurant/version"
 require 'lightspeed_restaurant/account'
 require 'lightspeed_restaurant/authentication'
 require 'lightspeed_restaurant/core'
+require 'lightspeed_restaurant/financial'
 
 module LightspeedRestaurant
   # Your code goes here...
