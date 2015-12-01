@@ -1,6 +1,4 @@
 module LightspeedRestaurant
-  module Errors
-    class APIConnectionError < LightspeedRestaurant
-    end
+  class APIConnectionError < LightspeedRestaurantError
   end
 end
