@@ -13,6 +13,7 @@ require 'lightspeed_restaurant/financial'
 require 'lightspeed_restaurant/inventory'
 require 'lightspeed_restaurant/online_order'
 require 'lightspeed_restaurant/registration'
+require 'lightspeed_restaurant/reservation'
 
 module LightspeedRestaurant
   # Your code goes here...
