@@ -4,13 +4,11 @@
 require 'rest-client'
 require 'json'
 
-
 #
 #   Version
 #
 
 require 'lightspeed_restaurant/version'
-
 
 #
 #   Resources
@@ -33,7 +31,6 @@ require 'lightspeed_restaurant/table'
 require 'lightspeed_restaurant/tax'
 require 'lightspeed_restaurant/ticket'
 
-
 #
 #   Errors
 #
@@ -41,7 +38,6 @@ require 'lightspeed_restaurant/ticket'
 require 'lightspeed_restaurant/errors/lightspeed_restaurant_error'
 require 'lightspeed_restaurant/errors/api_connection_error'
 
-
 module LightspeedRestaurant
-  # Your code goes here...
+  @base_uri = 'http://us1.posios.com/PosServer'
 end

@@ -4,15 +4,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lightspeed_restaurant/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lightspeed_restaurant"
+  spec.name          = 'lightspeed_restaurant'
   spec.version       = LightspeedRestaurant::VERSION
-  spec.authors       = ["Olivier Buffon"]
-  spec.email         = ["olivier@chronogolf.ca"]
+  spec.authors       = ['Olivier Buffon']
+  spec.email         = ['olivier@chronogolf.ca']
 
   spec.summary       = 'Ruby bindings for the Lightspeed Restaurant API'
   spec.description   = 'Lightspeed Restaurant is point of sale that helps bars, restaurants, and cafés deliver a better customer experience and run a more profitable business. See https://www.lightspeedhq.com/products/restaurant/ for details'
   spec.homepage      = 'http://staging-exact-integration.posios.com/PosServer/swagger-ui.html'
-  spec.license       = "MIT"
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
