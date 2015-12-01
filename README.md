@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/chronogolf/lightspeed_restaurant.svg?style=shield&circle-token=94ebc6c7495f5c0bbf9f6a89526395306f223b7e)](https://circleci.com/gh/chronogolf/lightspeed_restaurant)
+[![Circle CI](https://circleci.com/gh/chronogolf/lightspeed_restaurant.svg?style=shield&circle-token=94ebc6c7495f5c0bbf9f6a89526395306f223b7e)](https://circleci.com/gh/chronogolf/lightspeed_restaurant) [![Dependency Status](https://gemnasium.com/97099eaf969214667ab4e212a1a4c7fe.svg)](https://gemnasium.com/chronogolf/lightspeed_restaurant)
 
 # LightspeedRestaurant
 
