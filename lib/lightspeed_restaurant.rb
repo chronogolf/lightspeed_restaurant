@@ -6,6 +6,7 @@
 #
 
 require "lightspeed_restaurant/version"
+require 'lightspeed_restaurant/account'
 
 module LightspeedRestaurant
   # Your code goes here...
