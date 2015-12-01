@@ -4,4 +4,5 @@ machine:
   environment:
     RACK_ENV: test
 test:
-  override: bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
+  override:
+    - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
