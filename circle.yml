@@ -3,9 +3,6 @@ machine:
     America/New_York
   environment:
     RACK_ENV: test
-database:
-  override:
-    - echo 'no database needed'
 test:
   override:
     - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
