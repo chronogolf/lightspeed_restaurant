@@ -6,3 +6,4 @@ machine:
 test:
   override:
     - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
+    - bundle exec rubocop

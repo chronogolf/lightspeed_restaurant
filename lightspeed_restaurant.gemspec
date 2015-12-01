@@ -10,7 +10,9 @@ Gem::Specification.new do |spec|
   spec.email         = ['olivier@chronogolf.ca']
 
   spec.summary       = 'Ruby bindings for the Lightspeed Restaurant API'
-  spec.description   = 'Lightspeed Restaurant is point of sale that helps bars, restaurants, and cafés deliver a better customer experience and run a more profitable business. See https://www.lightspeedhq.com/products/restaurant/ for details'
+  spec.description   = 'Lightspeed Restaurant is point of sale that helps bars, restaurants, '\
+                       'and cafés deliver a better customer experience and run a more profitable business. '\
+                       'See https://www.lightspeedhq.com/products/restaurant/ for details'
   spec.homepage      = 'http://staging-exact-integration.posios.com/PosServer/swagger-ui.html'
   spec.license       = 'MIT'
 
@@ -25,4 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rake')
   spec.add_development_dependency('rspec')
   spec.add_development_dependency('pry')
+  spec.add_development_dependency('rubocop')
 end
