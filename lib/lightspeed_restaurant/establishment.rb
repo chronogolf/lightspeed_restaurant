@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Authentication
+  class Establishment
 
   end
 end

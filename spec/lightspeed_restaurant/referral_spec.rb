@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module LightspeedRestaurant
-  describe Account do
+  describe Referral do
 
   end
 end

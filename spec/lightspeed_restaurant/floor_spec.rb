@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module LightspeedRestaurant
-  describe OnlineOrder do
+  describe Floor do
 
   end
 end

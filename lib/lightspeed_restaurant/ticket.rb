@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Registration
+  class Ticket
 
   end
 end

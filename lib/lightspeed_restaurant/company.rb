@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Inventory
+  class Company
 
   end
 end

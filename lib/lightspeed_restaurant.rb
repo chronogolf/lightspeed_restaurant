@@ -16,14 +16,22 @@ require 'lightspeed_restaurant/version'
 #   Resources
 #
 
-require 'lightspeed_restaurant/account'
-require 'lightspeed_restaurant/authentication'
-require 'lightspeed_restaurant/core'
-require 'lightspeed_restaurant/financial'
-require 'lightspeed_restaurant/inventory'
-require 'lightspeed_restaurant/online_order'
-require 'lightspeed_restaurant/registration'
+require 'lightspeed_restaurant/company'
+require 'lightspeed_restaurant/customer'
+require 'lightspeed_restaurant/establishment'
+require 'lightspeed_restaurant/feature'
+require 'lightspeed_restaurant/floor'
+require 'lightspeed_restaurant/order'
+require 'lightspeed_restaurant/payment_type'
+require 'lightspeed_restaurant/product'
+require 'lightspeed_restaurant/product_group'
+require 'lightspeed_restaurant/receipt'
+require 'lightspeed_restaurant/referral'
+require 'lightspeed_restaurant/report'
 require 'lightspeed_restaurant/reservation'
+require 'lightspeed_restaurant/table'
+require 'lightspeed_restaurant/tax'
+require 'lightspeed_restaurant/ticket'
 
 
 #

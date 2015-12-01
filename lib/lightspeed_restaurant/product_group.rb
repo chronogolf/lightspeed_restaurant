@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Account
+  class ProductGroup
 
   end
 end

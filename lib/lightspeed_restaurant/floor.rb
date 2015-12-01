@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Core
+  class Floor
 
   end
 end

@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class Financial
+  class Feature
 
   end
 end

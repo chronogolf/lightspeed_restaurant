@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module LightspeedRestaurant
-  describe Financial do
+  describe PaymentType do
 
   end
 end

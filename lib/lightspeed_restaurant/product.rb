@@ -1,5 +1,5 @@
 module LightspeedRestaurant
-  class OnlineOrder
+  class Product
 
   end
 end

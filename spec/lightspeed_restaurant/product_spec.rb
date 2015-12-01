@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module LightspeedRestaurant
-  describe Registration do
+  describe Product do
 
   end
 end

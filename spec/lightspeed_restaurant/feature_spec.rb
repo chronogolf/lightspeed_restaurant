@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module LightspeedRestaurant
-  describe Core do
+  describe Feature do
 
   end
 end
