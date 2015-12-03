@@ -1,10 +1,11 @@
 Metrics/LineLength:
   Max: 120
 
+Metrics/MethodLength:
+  Max: 15
+
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/lightspeed_restaurant.rb'
-    - 'lib/lightspeed_restaurant/errors/lightspeed_restaurant_error.rb'
-    - 'lib/lightspeed_restaurant/version.rb'
+    - 'lib/**/*'
