@@ -5,7 +5,34 @@ require 'excon'
 require 'json'
 
 require 'lightspeed_restaurant/version'
-require 'lightspeed_restaurant/client'
+require 'lightspeed_restaurant/request'
+require 'lightspeed_restaurant/customer'
 
 module LightspeedRestaurant
+
+  class << self
+    attr_accessor :api_token, :base_url
+  end
+
+  def self.get(path, body = {}, query = {})
+    request(path, body, query).perform(method: :get)
+  end
+
+  def self.post(path, body = {}, query = {})
+    request(path, body, query).perform(method: :post)
+  end
+
+  def self.put(path, body = {}, query = {})
+    request(path, body, query).perform(method: :put)
+  end
+
+  def self.delete(path, body = {}, query = {})
+    request(path, body, query).perform(method: :delete)
+  end
+
+  private
+
+  def self.request(path, body, query)
+    LightspeedRestaurant::Request.new(@base_url, path, @api_token, body, query)
+  end
 end
