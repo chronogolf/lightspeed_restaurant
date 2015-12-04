@@ -74,18 +74,20 @@ customer.desroy
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
 - Add missing resources (Company, Reservation, Floor, Table...)
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
+
+## About Us
+[![Chronogolf][crest]](http://www.chronogolf.com)
+
+[Chronogolf](http://www.chronogolf.com)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
+Find more informations at http://www.chronogolf.com/solutions
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+[crest]: https://d2gn4xht817m0g.cloudfront.net/p/product_screenshots/images/original/000/614/797/614797-f3db0c404af118f18f765c51e9be9a44dda57875.png?1447183798
