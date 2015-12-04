@@ -2,25 +2,25 @@ require 'lightspeed_restaurant/base'
 
 module LightspeedRestaurant
   class Customer < LightspeedRestaurant::Base
-    attr_accessor :id,
-                  :city,
-                  :country,
-                  :deliveryCity,
-                  :deliveryCountry,
-                  :deliveryStreet,
-                  :deliveryStreetNumber,
-                  :deliveryZip,
-                  :email,
-                  :firstName,
-                  :lastName,
-                  :street,
-                  :streetNumber,
-                  :telephone,
-                  :zip,
-                  :links
-
-    def full_name
-      "#{firstName} #{lastName}"
+    def self.attributes
+      [:id,
+       :city,
+       :country,
+       :deliveryCity,
+       :deliveryCountry,
+       :deliveryStreet,
+       :deliveryStreetNumber,
+       :deliveryZip,
+       :email,
+       :firstName,
+       :lastName,
+       :street,
+       :streetNumber,
+       :telephone,
+       :zip,
+       :links].freeze
     end
+
+    attr_accessor(*attributes)
   end
 end
