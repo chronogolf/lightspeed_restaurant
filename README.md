@@ -2,7 +2,7 @@
 
 # Lightspeed Restaurant API Client
 
-[Lightspeed Restaurant API Client](https://github.com/chronogolf/lightspeed_restaurant) is a gem for interacting with [Lightspeed Restaurant](https://www.lightspeedhq.com/products/restaurant/) API. 
+[Lightspeed Restaurant API Client](https://github.com/chronogolf/lightspeed_restaurant) is a gem for interacting with [Lightspeed Restaurant](https://www.lightspeedhq.com/products/restaurant/) API.
 Lightspeed Restaurant is point of sale that helps bars, restaurants, and cafés deliver a better customer experience and run a more profitable business.
 
 ## Installation
@@ -71,7 +71,7 @@ customer.desroy
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
+Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
 
 ## About Us
 [![Chronogolf][crest]](http://www.chronogolf.com)
@@ -80,7 +80,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/chrono
 
 Find more informations at http://www.chronogolf.com/solutions
 
-## TODO
+## Future Improvements
 - Improve update operation to handle update by passing a hash
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
 - Add missing resources (Company, Reservation, Floor, Table...)
