@@ -2,8 +2,8 @@ module LightspeedRestaurant
   module Operations
     module Update
       def update
-        response = client.put(self.class.resource_path + "/#{id}", to_json)
-        LightspeedRestaurant.const_get(self.class.resource_name).new(response)
+        LightspeedRestaurant.put(self.class.resource_path + "/#{id}", self)
+        self
       end
       alias_method :save, :update
     end
