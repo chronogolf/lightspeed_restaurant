@@ -51,8 +51,8 @@ module LightspeedRestaurant
     end
 
     def response_object_error(response)
-      APIError.new("Invalid response object from API: #{response.body.inspect}"\
-                   "(HTTP response code was #{response.status})", response.status, response.body, response.headers)
+      APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
+                   response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
