@@ -2,16 +2,16 @@ module LightspeedRestaurant
   module Operations
     module List
       def list(params = {})
-        response = JSON.parse(client.get(self.class.resource_path, {}, params))
-        instantiate(response['results'], LightspeedRestaurant.const_get(self.class.resource_name))
+        response = JSON.parse(LightspeedRestaurant.get(resource_path, {}, params))
+        instantiate(response['results'])
       end
       alias_method :all, :list
 
       private
 
-      def instantiate(records, klass)
+      def instantiate(records)
         records.map do |record|
-          klass.new(record)
+          new(record)
         end
       end
     end
