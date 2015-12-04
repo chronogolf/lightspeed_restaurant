@@ -1,7 +1,16 @@
 require 'lightspeed_restaurant/base'
+require 'lightspeed_restaurant/operations/list'
+require 'lightspeed_restaurant/operations/find'
+require 'lightspeed_restaurant/operations/create'
+require 'lightspeed_restaurant/operations/update'
 
 module LightspeedRestaurant
   class Customer < LightspeedRestaurant::Base
+    include LightspeedRestaurant::Operations::Update
+    extend LightspeedRestaurant::Operations::Create
+    extend LightspeedRestaurant::Operations::Find
+    extend LightspeedRestaurant::Operations::List
+
     def self.attributes
       [:id,
        :city,
@@ -22,5 +31,13 @@ module LightspeedRestaurant
     end
 
     attr_accessor(*attributes)
+
+    def self.resource_name
+      'Customer'
+    end
+
+    def self.resource_path
+      "/rest/core/#{resource_name.downcase}"
+    end
   end
 end
