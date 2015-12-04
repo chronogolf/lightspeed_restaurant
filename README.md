@@ -73,11 +73,6 @@ customer.desroy
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
 
-## TODO
-- Improve update operation to handle update by passing a hash
-- Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
-- Add missing resources (Company, Reservation, Floor, Table...)
-
 ## About Us
 [![Chronogolf][crest]](http://www.chronogolf.com)
 
@@ -85,6 +80,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/chrono
 
 Find more informations at http://www.chronogolf.com/solutions
 
+## TODO
+- Improve update operation to handle update by passing a hash
+- Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
+- Add missing resources (Company, Reservation, Floor, Table...)
 
 ## License
 
