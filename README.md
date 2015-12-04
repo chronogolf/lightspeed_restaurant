@@ -84,6 +84,7 @@ Find more informations at http://www.chronogolf.com/solutions
 - Improve update operation to handle update by passing a hash
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
 - Add missing resources (Company, Reservation, Floor, Table...)
+- Improve test coverage
 
 ## License
 
