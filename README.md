@@ -69,15 +69,14 @@ customer = LightspeedRestaurant::Customer.find(123)
 customer.desroy
 ```
 
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
+
 ## TODO
 - Improve update operation to handle update by passing a hash
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
 - Add missing resources (Company, Reservation, Floor, Table...)
-
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
 
 ## About Us
 [![Chronogolf][crest]](http://www.chronogolf.com)
