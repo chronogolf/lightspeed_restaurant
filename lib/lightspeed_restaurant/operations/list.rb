@@ -11,7 +11,7 @@ module LightspeedRestaurant
 
       def instantiate(records)
         records.map do |record|
-          self.new(record)
+          new(record)
         end
       end
     end

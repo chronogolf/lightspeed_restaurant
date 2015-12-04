@@ -3,7 +3,7 @@ module LightspeedRestaurant
     module Find
       def find(id)
         response = JSON.parse(LightspeedRestaurant.get(resource_path + "/#{id}"))
-        self.new(response)
+        new(response)
       end
     end
   end

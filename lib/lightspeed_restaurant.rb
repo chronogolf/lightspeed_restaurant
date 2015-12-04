@@ -9,7 +9,6 @@ require 'lightspeed_restaurant/request'
 require 'lightspeed_restaurant/customer'
 
 module LightspeedRestaurant
-
   class << self
     attr_accessor :api_token, :base_url
   end
