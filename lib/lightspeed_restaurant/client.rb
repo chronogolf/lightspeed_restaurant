@@ -7,7 +7,7 @@ module LightspeedRestaurant
 
     attr_accessor :api_token, :base_url
 
-    def initialize(api_token, base_url: nil)
+    def initialize(api_token, base_url = nil)
       @base_url  = base_url
       @api_token = api_token
     end
