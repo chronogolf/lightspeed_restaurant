@@ -19,7 +19,7 @@ module LightspeedRestaurant
     def perform(**args)
       response = @connection.request(args.merge(path: @path, headers: @headers, body: @body, query: @query))
       if [200, 201].include?(response.status)
-        JSON.parse(response.body)
+        response.body
       else
         handle_error(response)
       end

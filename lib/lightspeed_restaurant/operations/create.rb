@@ -3,7 +3,13 @@ module LightspeedRestaurant
     module Create
       def create(attributes)
         response = client.post(self.class.resource_path, attributes)
-        LightspeedRestaurant.const_get(self.class.resource_name).new(response)
+        resource_class.new(attributes.merge!(id: response.to_i))
+      end
+
+      private
+
+      def resource_class
+        LightspeedRestaurant.const_get(self.class.resource_name)
       end
     end
   end
