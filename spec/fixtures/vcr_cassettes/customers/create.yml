@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"test5","lastName":"test5","email":"test5@test.com"}'
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Date:
+      - Fri, 04 Dec 2015 21:34:11 GMT
+      Location:
+      - "/customer/${createdId}"
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '2617'
+    http_version:
+  recorded_at: Fri, 04 Dec 2015 21:34:11 GMT
+recorded_with: VCR 3.0.0
