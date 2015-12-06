@@ -1,5 +1,4 @@
-shared_examples "a find operation" do
-
+shared_examples 'a find operation' do
   let(:resource_name) { described_class.to_s.gsub(/^.*::/, '').downcase }
 
   it "can fetch a specific resource's occurrence by ID" do

@@ -1,5 +1,4 @@
-shared_examples "an update operation" do
-
+shared_examples 'an update operation' do
   let(:resource_name) { described_class.to_s.gsub(/^.*::/, '').downcase }
 
   it 'with valid params' do

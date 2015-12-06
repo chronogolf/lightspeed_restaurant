@@ -1,5 +1,4 @@
-shared_examples "a list operation" do
-
+shared_examples 'a list operation' do
   let(:resource_name) { described_class.to_s.gsub(/^.*::/, '').downcase }
 
   it "can fetch all resource's occurrences" do
