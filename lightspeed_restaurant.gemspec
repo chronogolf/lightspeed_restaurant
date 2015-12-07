@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Lightspeed Restaurant is point of sale that helps bars, restaurants, '\
                        'and cafés deliver a better customer experience and run a more profitable business. '\
                        'See https://www.lightspeedhq.com/products/restaurant/ for details'
-  spec.homepage      = 'http://staging-exact-integration.posios.com/PosServer/swagger-ui.html'
+  spec.homepage      = 'https://github.com/chronogolf/lightspeed_restaurant'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
