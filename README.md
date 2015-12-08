@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/chronogolf/lightspeed_restaurant.svg?style=shield&circle-token=94ebc6c7495f5c0bbf9f6a89526395306f223b7e)](https://circleci.com/gh/chronogolf/lightspeed_restaurant) [![Dependency Status](https://gemnasium.com/chronogolf/lightspeed_restaurant.svg)](https://gemnasium.com/chronogolf/lightspeed_restaurant) [![Code Climate](https://codeclimate.com/github/chronogolf/lightspeed_restaurant/badges/gpa.svg)](https://codeclimate.com/github/chronogolf/lightspeed_restaurant)
+[![Circle CI](https://circleci.com/gh/chronogolf/lightspeed_restaurant.svg?style=shield&circle-token=94ebc6c7495f5c0bbf9f6a89526395306f223b7e)](https://circleci.com/gh/chronogolf/lightspeed_restaurant) [![Dependency Status](https://gemnasium.com/chronogolf/lightspeed_restaurant.svg)](https://gemnasium.com/chronogolf/lightspeed_restaurant) [![Code Climate](https://codeclimate.com/github/chronogolf/lightspeed_restaurant/badges/gpa.svg)](https://codeclimate.com/github/chronogolf/lightspeed_restaurant) [![Gem Version](https://badge.fury.io/rb/lightspeed_restaurant.svg)](https://badge.fury.io/rb/lightspeed_restaurant)
 
 # Lightspeed Restaurant API Client
 
