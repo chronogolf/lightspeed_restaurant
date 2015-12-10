@@ -58,6 +58,11 @@ LightspeedRestaurant::Customer.create(...firstName: 'Tom', email: 'tom@brady.com
 
 #### Update
 ```ruby
+LightspeedRestaurant::Customer.update(123, { email: 'tom@brady.com' })
+```
+
+#### Save
+```ruby
 customer = LightspeedRestaurant::Customer.find(123)
 customer.firstName = 'Micheal'
 customer.save
@@ -66,7 +71,7 @@ customer.save
 #### Destroy
 ```ruby
 customer = LightspeedRestaurant::Customer.find(123)
-customer.desroy
+customer.destroy
 ```
 
 ## Contributing
@@ -81,7 +86,6 @@ Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_
 Find more informations at http://www.chronogolf.com/solutions
 
 ## Future Improvements
-- Improve update operation to handle update by passing a hash
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
 - Add missing resources (Company, Reservation, Floor, Table...)
 - Improve test coverage
