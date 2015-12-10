@@ -1,11 +1,11 @@
 module LightspeedRestaurant
   module Operations
     module Update
-      def update
-        LightspeedRestaurant.put(self.class.resource_path + "/#{id}", self)
-        self
+      def update(id, attributes)
+        updated_object = new(attributes)
+        LightspeedRestaurant.put(resource_path + "/#{id}", updated_object)
+        updated_object
       end
-      alias_method :save, :update
     end
   end
 end
