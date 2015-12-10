@@ -30,7 +30,16 @@ module LightspeedRestaurant
       it_behaves_like 'an update operation' do
         let(:resource_id) { 2366 }
         let(:attribute_to_update) { 'email' }
-        let(:valid_attribute_value) { 'test-update@test.com' }
+        let(:valid_params) { { email: 'test-update@test.com' } }
+        let(:invalid_params) { { email: '' } }
+      end
+    end
+
+    context 'saving' do
+      it_behaves_like 'an save operation' do
+        let(:resource_id) { 2366 }
+        let(:attribute_to_update) { 'email' }
+        let(:valid_attribute_value) { 'test-save@test.com' }
         let(:invalid_attribute_value) { '' }
       end
     end

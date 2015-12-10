@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer/2366
+    body:
+      encoding: UTF-8
+      string: '{"id":2366,"city":null,"country":null,"deliveryCity":null,"deliveryCountry":null,"deliveryStreet":null,"deliveryStreetNumber":null,"deliveryZip":null,"email":"test-save@test.com","firstName":"test1","lastName":"test1","street":null,"streetNumber":null,"telephone":null,"zip":null,"links":[]}'
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 04 Dec 2015 21:57:28 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '2366'
+    http_version:
+  recorded_at: Fri, 04 Dec 2015 21:57:28 GMT
+recorded_with: VCR 3.0.0
