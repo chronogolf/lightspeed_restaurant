@@ -3,11 +3,13 @@ require 'lightspeed_restaurant/operations/list'
 require 'lightspeed_restaurant/operations/find'
 require 'lightspeed_restaurant/operations/create'
 require 'lightspeed_restaurant/operations/update'
+require 'lightspeed_restaurant/operations/save'
 
 module LightspeedRestaurant
   class Customer < LightspeedRestaurant::Base
-    include LightspeedRestaurant::Operations::Update
+    include LightspeedRestaurant::Operations::Save
     extend LightspeedRestaurant::Operations::Create
+    extend LightspeedRestaurant::Operations::Update
     extend LightspeedRestaurant::Operations::Find
     extend LightspeedRestaurant::Operations::List
 
