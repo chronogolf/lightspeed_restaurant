@@ -3,7 +3,7 @@ module LightspeedRestaurant
     def initialize(data = {})
       self.class.attributes.each do |attribute|
         data  = data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-        value = ['N/A', ''].include?(data[attribute]) ? nil : data[attribute]
+        value = ['Missing', 'N/A', ''].include?(data[attribute]) ? nil : data[attribute]
         send("#{attribute}=", value)
       end
     end
