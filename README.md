@@ -33,7 +33,7 @@ Next, make requests using the resource class you need:
 ```ruby
 customers = LightspeedRestaurant::Customer.all
 customer  = customers.first
-customer.firstName = 'Micheal'
+customer.firstName = 'Tom'
 customer.save
 ```
 That's it!
