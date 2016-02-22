@@ -1,11 +1,7 @@
 module LightspeedRestaurant
   class Base
     def initialize(data = {})
-      self.class.attributes.each do |attribute|
-        data  = data.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-        value = ['Missing', 'N/A', ''].include?(data[attribute]) ? nil : data[attribute]
-        send("#{attribute}=", value)
-      end
+      convert_to_obj(data)
     end
 
     def attributes
@@ -15,7 +11,18 @@ module LightspeedRestaurant
     end
 
     def to_json
-      to_hash.to_json
+      self.attributes.to_json
+    end
+
+    private
+
+    def convert_to_obj(h)
+      h.each do |key, value|
+        self.class.send(:attr_accessor, key)
+        value = ['Missing', 'N/A', ''].include?(value) ? nil : value
+        instance_variable_set("@#{key}", value)
+        convert_to_obj(value) if value.is_a? Hash
+      end
     end
   end
 end
