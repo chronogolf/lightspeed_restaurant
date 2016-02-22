@@ -8,9 +8,9 @@ module LightspeedRestaurant
       end
     end
 
-    def to_hash
-      self.class.attributes.each_with_object({}) do |attribute, h|
-        h[attribute] = instance_variable_get("@#{attribute}")
+    def attributes
+      self.instance_variables.each_with_object({}) do |instance_variable, h|
+        h[instance_variable[1..instance_variable.length]] = instance_variable_get(instance_variable)
       end
     end
 
