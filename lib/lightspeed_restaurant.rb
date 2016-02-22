@@ -6,7 +6,9 @@ require 'json'
 
 require 'lightspeed_restaurant/version'
 require 'lightspeed_restaurant/request'
+
 require 'lightspeed_restaurant/customer'
+require 'lightspeed_restaurant/receipt'
 
 module LightspeedRestaurant
   class << self
