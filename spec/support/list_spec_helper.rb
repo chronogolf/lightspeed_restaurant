@@ -3,7 +3,7 @@ shared_examples 'a list operation' do
 
   it "can fetch all resource's occurrences" do
     VCR.use_cassette("#{resource_name}/list") do
-      resources = described_class.all
+      resources = defined?(params) ? described_class.all(params) : described_class.all
       expect(resources).to be_an(Array)
       expect(resources.count).to eq(results_count)
 

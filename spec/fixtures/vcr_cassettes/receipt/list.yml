@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://staging-exact-integration.posios.com/PosServer/rest/financial/receipt?date=2016-02-23
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 24 Feb 2016 01:35:45 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"id":198374,"parentId":0,"floorId":0,"tableId":180867,"customerId":0,"userId":23176,"status":"PAID","type":"restaurant","creationDate":"2016-02-23T14:44:01.445Z","modificationDate":"2016-02-23T14:45:31.602Z","closingDate":"1970-01-01T00:00:00.000Z","printDate":"2016-02-23T14:45:18.664Z","total":22.0,"items":[{"productId":"42","productName":"Loempia","info":"","amount":1,"unitPrice":10.0,"unitPriceWithoutVat":8.9286,"totalPrice":10.0,"totalPriceWithoutVat":8.93,"vatPercentage":12.0,"deliveryVatPercentage":0.0,"takeawayVatPercentage":0.0,"priceTypeId":0,"modifierValues":[]},{"productId":"41","productName":"Carpacio","info":"","amount":1,"unitPrice":12.0,"unitPriceWithoutVat":10.7143,"totalPrice":12.0,"totalPriceWithoutVat":10.71,"vatPercentage":12.0,"deliveryVatPercentage":0.0,"takeawayVatPercentage":0.0,"priceTypeId":0,"modifierValues":[]}],"actionItems":[],"payments":[{"type":"Cash","paymentTypeId":1446,"paymentTypeCategoryId":1,"amount":22.0,"tips":0.0,"restitution":0.0,"statusId":0}]},{"id":198378,"parentId":0,"floorId":0,"tableId":180867,"customerId":8356,"userId":23176,"status":"PAID","type":"restaurant","creationDate":"2016-02-23T16:22:44.540Z","modificationDate":"2016-02-23T16:25:32.750Z","closingDate":"1970-01-01T00:00:00.000Z","printDate":"2016-02-23T16:25:19.268Z","total":78.0,"items":[{"productId":"51","productName":"Steak","info":"","amount":2,"unitPrice":25.0,"unitPriceWithoutVat":22.3214,"totalPrice":50.0,"totalPriceWithoutVat":44.64,"vatPercentage":12.0,"deliveryVatPercentage":0.0,"takeawayVatPercentage":0.0,"priceTypeId":0,"modifierValues":[]},{"productId":"52","productName":"Spaghetti","info":"","amount":2,"unitPrice":14.0,"unitPriceWithoutVat":12.5,"totalPrice":28.0,"totalPriceWithoutVat":25.0,"vatPercentage":12.0,"deliveryVatPercentage":0.0,"takeawayVatPercentage":0.0,"priceTypeId":0,"modifierValues":[]}],"actionItems":[],"payments":[{"type":"Cash","paymentTypeId":1446,"paymentTypeCategoryId":1,"amount":78.0,"tips":0.0,"restitution":0.0,"statusId":0}]}],"amount":50,"offset":0}'
+    http_version:
+  recorded_at: Wed, 24 Feb 2016 01:35:45 GMT
+recorded_with: VCR 3.0.0
