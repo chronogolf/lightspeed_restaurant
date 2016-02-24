@@ -5,13 +5,13 @@ module LightspeedRestaurant
     end
 
     def attributes
-      self.instance_variables.each_with_object({}) do |instance_variable, h|
+      instance_variables.each_with_object({}) do |instance_variable, h|
         h[instance_variable[1..instance_variable.length]] = instance_variable_get(instance_variable)
       end
     end
 
     def to_json
-      self.attributes.to_json
+      attributes.to_json
     end
 
     private
