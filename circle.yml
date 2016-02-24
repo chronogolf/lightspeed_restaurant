@@ -5,5 +5,6 @@ machine:
     RACK_ENV: test
 test:
   override:
-    - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
+    - bundle exec bundle-audit check --update
     - bundle exec rubocop
+    - bundle exec rspec --format RspecJunitFormatter --out $CIRCLE_TEST_REPORTS/junit/rspec.xml --format progress
