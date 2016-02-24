@@ -6,7 +6,9 @@ require 'json'
 
 require 'lightspeed_restaurant/version'
 require 'lightspeed_restaurant/request'
+
 require 'lightspeed_restaurant/customer'
+require 'lightspeed_restaurant/receipt'
 
 module LightspeedRestaurant
   class << self
@@ -28,8 +30,6 @@ module LightspeedRestaurant
   def self.delete(path, body = {}, query = {})
     request(path, body, query).perform(method: :delete)
   end
-
-  private
 
   def self.request(path, body, query)
     LightspeedRestaurant::Request.new(@base_url, path, @api_token, body, query)

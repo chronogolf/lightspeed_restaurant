@@ -13,27 +13,6 @@ module LightspeedRestaurant
     extend LightspeedRestaurant::Operations::Find
     extend LightspeedRestaurant::Operations::List
 
-    def self.attributes
-      [:id,
-       :city,
-       :country,
-       :deliveryCity,
-       :deliveryCountry,
-       :deliveryStreet,
-       :deliveryStreetNumber,
-       :deliveryZip,
-       :email,
-       :firstName,
-       :lastName,
-       :street,
-       :streetNumber,
-       :telephone,
-       :zip,
-       :links].freeze
-    end
-
-    attr_accessor(*attributes)
-
     def self.resource_name
       'Customer'
     end
