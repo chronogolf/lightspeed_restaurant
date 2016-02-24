@@ -31,7 +31,7 @@ module LightspeedRestaurant
     request(path, body, query).perform(method: :delete)
   end
 
-  private
+  private_class_method :request
 
   def self.request(path, body, query)
     LightspeedRestaurant::Request.new(@base_url, path, @api_token, body, query)
