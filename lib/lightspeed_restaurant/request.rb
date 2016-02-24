@@ -30,15 +30,15 @@ module LightspeedRestaurant
     def handle_error(response)
       case response.status
       when 400
-        fail invalid_request_error(response)
+        raise invalid_request_error(response)
       when 401
-        fail authentication_error(response)
+        raise authentication_error(response)
       when 403
-        fail unauthorized_error(response)
+        raise unauthorized_error(response)
       when 404
-        fail not_found_error(response)
+        raise not_found_error(response)
       else
-        fail response_object_error(response)
+        raise response_object_error(response)
       end
     end
 
