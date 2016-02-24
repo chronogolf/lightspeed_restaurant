@@ -5,7 +5,7 @@ module LightspeedRestaurant
         response = JSON.parse(LightspeedRestaurant.get(resource_path, {}, params))
         instantiate(response['results'])
       end
-      alias_method :all, :list
+      alias all list
 
       private
 
