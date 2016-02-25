@@ -9,7 +9,6 @@ module LightspeedRestaurant
     context 'listing' do
       it_behaves_like 'a list operation' do
         let(:results_count) { 4 }
-        let(:resource_id)   { 2365 }
       end
     end
 
