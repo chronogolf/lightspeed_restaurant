@@ -3,7 +3,11 @@ module LightspeedRestaurant
     module Create
       def create(attributes)
         response = LightspeedRestaurant.post(resource_path, attributes)
-        new(attributes.merge!(id: response.to_i))
+        if is_a?(Class)
+          new(attributes.merge!(id: response.to_i))
+        else
+          self.class.new(attributes.merge!(id: response.to_i))
+        end
       end
     end
   end

@@ -11,7 +11,7 @@ module LightspeedRestaurant
 
       def instantiate(records)
         records.map do |record|
-          new(record)
+          is_a?(Class) ? new(record) : self.class.new(record)
         end
       end
     end
