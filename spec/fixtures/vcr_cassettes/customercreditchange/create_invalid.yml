@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer/2365/creditchange
+    body:
+      encoding: UTF-8
+      string: '{"change":"hahaha"}'
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 400
+      message: ''
+    headers:
+      Date:
+      - Thu, 25 Feb 2016 20:44:41 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '{"description":"Could not read JSON: Can not construct instance of
+        java.lang.Double from String value ''hahaha'': not a valid Double value\n
+        at [Source: org.eclipse.jetty.server.HttpInput@5b3ddc60; line: 1, column:
+        2] (through reference chain: com.xudox.pos.server.rest.shared.model.CustomerCreditsChangeRequestDTO[\"change\"]);
+        nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException:
+        Can not construct instance of java.lang.Double from String value ''hahaha'':
+        not a valid Double value\n at [Source: org.eclipse.jetty.server.HttpInput@5b3ddc60;
+        line: 1, column: 2] (through reference chain: com.xudox.pos.server.rest.shared.model.CustomerCreditsChangeRequestDTO[\"change\"])"}'
+    http_version:
+  recorded_at: Thu, 25 Feb 2016 20:44:41 GMT
+recorded_with: VCR 3.0.1

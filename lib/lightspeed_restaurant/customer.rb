@@ -7,11 +7,11 @@ require 'lightspeed_restaurant/operations/save'
 
 module LightspeedRestaurant
   class Customer < LightspeedRestaurant::Base
-    include LightspeedRestaurant::Operations::Save
-    extend LightspeedRestaurant::Operations::Create
-    extend LightspeedRestaurant::Operations::Update
-    extend LightspeedRestaurant::Operations::Find
-    extend LightspeedRestaurant::Operations::List
+    include Operations::Save
+    extend Operations::Create
+    extend Operations::Update
+    extend Operations::Find
+    extend Operations::List
 
     def self.resource_name
       'Customer'

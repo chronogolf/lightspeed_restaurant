@@ -3,7 +3,7 @@ require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurant
   class Receipt < LightspeedRestaurant::Base
-    extend LightspeedRestaurant::Operations::List
+    extend Operations::List
 
     def self.resource_name
       'Receipt'
