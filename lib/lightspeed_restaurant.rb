@@ -13,7 +13,7 @@ require 'lightspeed_restaurant/receipt'
 
 module LightspeedRestaurant
   class << self
-    attr_accessor :api_token, :base_url
+    attr_accessor :api_token, :base_uri
 
     def get(path, body = {}, query = {})
       request(path, body, query).perform(method: :get)
@@ -32,7 +32,7 @@ module LightspeedRestaurant
     end
 
     def request(path, body, query)
-      Request.new(@base_url, path, @api_token, body, query)
+      Request.new(@base_uri, path, @api_token, body, query)
     end
   end
 end

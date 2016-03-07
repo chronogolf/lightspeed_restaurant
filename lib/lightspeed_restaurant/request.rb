@@ -7,13 +7,13 @@ require 'uri'
 
 module LightspeedRestaurant
   class Request
-    def initialize(base_url, path, token, body = {}, query = {})
-      @base_url   = base_url || 'http://staging-exact-integration.posios.com'
+    def initialize(base_uri, path, token, body = {}, query = {})
+      @base_uri   = base_uri || 'http://staging-exact-integration.posios.com'
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
       @path       = '/PosServer' + path
-      @connection = Excon.new(@base_url)
+      @connection = Excon.new(@base_uri)
     end
 
     def perform(**args)
