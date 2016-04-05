@@ -19,7 +19,6 @@ module LightspeedRestaurant
     def convert_to_obj(h)
       h.each do |key, value|
         self.class.send(:attr_accessor, key)
-        value = ['Missing', 'N/A', ''].include?(value) ? nil : value
         instance_variable_set("@#{key}", value)
         convert_to_obj(value) if value.is_a? Hash
       end
