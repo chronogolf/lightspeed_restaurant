@@ -31,6 +31,8 @@ module LightspeedRestaurant
       request(path, body, query).perform(method: :delete)
     end
 
+    private
+
     def request(path, body, query)
       Request.new(@base_uri, path, @api_token, body, query)
     end
