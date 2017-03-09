@@ -4,6 +4,10 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Max: 20
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
 Style/Documentation:
   Exclude:
     - 'spec/**/*'
