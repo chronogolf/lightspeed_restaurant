@@ -19,9 +19,18 @@ module LightspeedRestaurant
     end
 
     context 'creating' do
+      let(:valid_params) { { firstName: 'test5', lastName: 'test5', email: 'test5@test.com' } }
+
       it_behaves_like 'a create operation' do
         let(:valid_params) { { firstName: 'test5', lastName: 'test5', email: 'test5@test.com' } }
         let(:invalid_params) { { email: '' } }
+      end
+
+      it 'returns the customer id' do
+        VCR.use_cassette('customer/create', allow_playback_repeats: true) do
+          resource = described_class.create(valid_params)
+          expect(resource.id).to eq 2617
+        end
       end
     end
 
