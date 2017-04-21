@@ -14,7 +14,7 @@ shared_examples 'a create operation' do
     VCR.use_cassette("#{resource_name}/create_invalid") do
       expect do
         described_class.create(invalid_params)
-      end.to raise_error(LightspeedRestaurant::APIError)
+      end.to raise_error(LightspeedRestaurantClient::APIError)
     end
   end
 end
@@ -35,7 +35,7 @@ shared_examples 'a create operation on an instantiated class' do
     VCR.use_cassette("#{resource_name}/create_invalid") do
       expect do
         described_class.new(resource_params).create(invalid_params)
-      end.to raise_error(LightspeedRestaurant::InvalidRequestError)
+      end.to raise_error(LightspeedRestaurantClient::InvalidRequestError)
     end
   end
 end

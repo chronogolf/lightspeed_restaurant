@@ -1,8 +1,8 @@
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   module Operations
     module Save
       def save
-        LightspeedRestaurant.put(self.class.resource_path + "/#{id}", self)
+        LightspeedRestaurantClient.put(self.class.resource_path + "/#{id}", self)
         self
       end
     end

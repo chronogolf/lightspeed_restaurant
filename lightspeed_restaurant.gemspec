@@ -5,7 +5,7 @@ require 'lightspeed_restaurant/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'lightspeed_restaurant'
-  spec.version       = LightspeedRestaurant::VERSION
+  spec.version       = LightspeedRestaurantClient::VERSION
   spec.authors       = ['Olivier Buffon']
   spec.email         = ['olivier@chronogolf.ca']
 

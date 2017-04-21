@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe LightspeedRestaurant do
+describe LightspeedRestaurantClient do
   it 'has a version number' do
-    expect(LightspeedRestaurant::VERSION).not_to be nil
+    expect(LightspeedRestaurantClient::VERSION).not_to be nil
   end
 end

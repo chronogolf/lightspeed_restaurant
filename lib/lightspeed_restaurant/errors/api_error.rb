@@ -1,4 +1,4 @@
-module LightspeedRestaurant
-  class APIError < LightspeedRestaurantError
+module LightspeedRestaurantClient
+  class APIError < LightspeedRestaurantClientError
   end
 end

@@ -1,3 +1,3 @@
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   VERSION = '0.3.0'.freeze
 end

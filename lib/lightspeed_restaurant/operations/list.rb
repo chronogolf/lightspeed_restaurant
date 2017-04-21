@@ -1,8 +1,8 @@
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   module Operations
     module List
       def list(params = {})
-        response = JSON.parse(LightspeedRestaurant.get(resource_path, {}, params))
+        response = JSON.parse(LightspeedRestaurantClient.get(resource_path, {}, params))
         results = response.is_a?(Array) ? response : response['results']
         instantiate(results)
       end

@@ -1,4 +1,4 @@
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   class Base
     def initialize(data = {})
       convert_to_obj(data)

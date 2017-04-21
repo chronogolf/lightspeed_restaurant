@@ -12,7 +12,7 @@ require 'lightspeed_restaurant/customer_credit_change'
 require 'lightspeed_restaurant/receipt'
 require 'lightspeed_restaurant/company'
 
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   class << self
     attr_accessor :api_token, :base_uri
 

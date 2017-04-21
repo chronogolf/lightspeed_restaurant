@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   describe Customer do
     setup_api_token
 
-    subject { LightspeedRestaurant::Customer }
+    subject { LightspeedRestaurantClient::Customer }
 
     context 'listing' do
       it_behaves_like 'a list operation' do

@@ -2,8 +2,8 @@ require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/list'
 require 'lightspeed_restaurant/operations/create'
 
-module LightspeedRestaurant
-  class CustomerCreditChange < LightspeedRestaurant::Base
+module LightspeedRestaurantClient
+  class CustomerCreditChange < LightspeedRestaurantClient::Base
     include Operations::List
     include Operations::Create
 

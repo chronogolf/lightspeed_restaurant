@@ -1,4 +1,4 @@
-module LightspeedRestaurant
-  class UnauthorizedError < LightspeedRestaurantError
+module LightspeedRestaurantClient
+  class UnauthorizedError < LightspeedRestaurantClientError
   end
 end

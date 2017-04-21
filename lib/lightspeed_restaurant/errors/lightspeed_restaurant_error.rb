@@ -1,5 +1,5 @@
-module LightspeedRestaurant
-  class LightspeedRestaurantError < StandardError
+module LightspeedRestaurantClient
+  class LightspeedRestaurantClientError < StandardError
     attr_reader :message
     attr_reader :http_status
     attr_reader :http_body

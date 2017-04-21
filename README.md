@@ -27,11 +27,11 @@ Or install it yourself as:
 
 First, set your api token:
 ```ruby
-LightspeedRestaurant.api_token = "YOUR_API_TOKEN_HERE"
+LightspeedRestaurantClient.api_token = "YOUR_API_TOKEN_HERE"
 ```
 Next, make requests using the resource class you need:
 ```ruby
-customers = LightspeedRestaurant::Customer.all
+customers = LightspeedRestaurantClient::Customer.all
 customer  = customers.first
 customer.firstName = 'Tom'
 customer.save
@@ -43,34 +43,34 @@ That's it!
 #### List
 
 ```ruby
-LightspeedRestaurant::Customer.all
+LightspeedRestaurantClient::Customer.all
 ```
 
 #### Find
 ```ruby
-LightspeedRestaurant::Customer.find(123)
+LightspeedRestaurantClient::Customer.find(123)
 ```
 
 #### Create
 ```ruby
-LightspeedRestaurant::Customer.create(...firstName: 'Tom', email: 'tom@brady.com'...)
+LightspeedRestaurantClient::Customer.create(...firstName: 'Tom', email: 'tom@brady.com'...)
 ```
 
 #### Update
 ```ruby
-LightspeedRestaurant::Customer.update(123, { email: 'tom@brady.com' })
+LightspeedRestaurantClient::Customer.update(123, { email: 'tom@brady.com' })
 ```
 
 #### Save
 ```ruby
-customer = LightspeedRestaurant::Customer.find(123)
+customer = LightspeedRestaurantClient::Customer.find(123)
 customer.firstName = 'Micheal'
 customer.save
 ```
 
 #### Destroy
 ```ruby
-customer = LightspeedRestaurant::Customer.find(123)
+customer = LightspeedRestaurantClient::Customer.find(123)
 customer.destroy
 ```
 

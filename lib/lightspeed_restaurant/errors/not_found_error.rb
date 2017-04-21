@@ -1,4 +1,4 @@
-module LightspeedRestaurant
-  class NotFoundError < LightspeedRestaurantError
+module LightspeedRestaurantClient
+  class NotFoundError < LightspeedRestaurantClientError
   end
 end

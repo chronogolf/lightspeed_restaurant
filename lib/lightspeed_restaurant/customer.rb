@@ -5,8 +5,8 @@ require 'lightspeed_restaurant/operations/create'
 require 'lightspeed_restaurant/operations/update'
 require 'lightspeed_restaurant/operations/save'
 
-module LightspeedRestaurant
-  class Customer < LightspeedRestaurant::Base
+module LightspeedRestaurantClient
+  class Customer < LightspeedRestaurantClient::Base
     include Operations::Save
     extend Operations::Create
     extend Operations::Update

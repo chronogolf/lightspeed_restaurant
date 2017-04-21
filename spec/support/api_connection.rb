@@ -1,6 +1,6 @@
 module APIConnection
   def setup_api_token
-    LightspeedRestaurant.api_token = 'API_TOKEN_VALUE'
+    LightspeedRestaurantClient.api_token = 'API_TOKEN_VALUE'
   end
 end
 

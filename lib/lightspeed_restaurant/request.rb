@@ -5,7 +5,7 @@ require 'lightspeed_restaurant/errors/invalid_request_error'
 require 'lightspeed_restaurant/errors/not_found_error'
 require 'uri'
 
-module LightspeedRestaurant
+module LightspeedRestaurantClient
   class Request
     def initialize(base_uri, path, token, body = {}, query = {})
       @base_uri   = base_uri || 'http://staging-exact-integration.posios.com'

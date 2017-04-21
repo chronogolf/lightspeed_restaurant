@@ -1,4 +1,4 @@
-module LightspeedRestaurant
-  class InvalidRequestError < LightspeedRestaurantError
+module LightspeedRestaurantClient
+  class InvalidRequestError < LightspeedRestaurantClientError
   end
 end

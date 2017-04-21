@@ -20,7 +20,7 @@ shared_examples 'an save operation' do
       expect do
         @resource.send("#{attribute_to_update}=", invalid_attribute_value)
         @resource.save
-      end.to raise_error(LightspeedRestaurant::APIError)
+      end.to raise_error(LightspeedRestaurantClient::APIError)
     end
   end
 end
