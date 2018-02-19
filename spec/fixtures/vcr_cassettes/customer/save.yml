@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: put
-    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer/2366
+    uri: http://stating-integration.posios.com/PosServer/rest/core/customer/2366
     body:
       encoding: UTF-8
       string: '{"id":2366,"city":null,"country":null,"deliveryCity":null,"deliveryCountry":null,"deliveryStreet":null,"deliveryStreetNumber":null,"deliveryZip":null,"email":"test-save@test.com","firstName":"test1","lastName":"test1","street":null,"streetNumber":null,"telephone":null,"zip":null,"links":[]}'

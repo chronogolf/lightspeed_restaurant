@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer
+    uri: http://stating-integration.posios.com/PosServer/rest/core/customer
     body:
       encoding: UTF-8
       string: "{}"

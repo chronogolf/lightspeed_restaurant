@@ -8,7 +8,7 @@ require 'uri'
 module LightspeedRestaurantClient
   class Request
     def initialize(base_uri, path, token, body = {}, query = {})
-      @base_uri   = base_uri || 'http://staging-exact-integration.posios.com'
+      @base_uri   = base_uri || 'http://stating-integration.posios.com'
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
