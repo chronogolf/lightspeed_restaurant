@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://staging-exact-integration.posios.com/PosServer/rest/core/customer/2365/creditchange
+    uri: http://stating-integration.posios.com/PosServer/rest/core/customer/2365/creditchange
     body:
       encoding: UTF-8
       string: '{"change":"hahaha"}'

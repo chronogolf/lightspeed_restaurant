@@ -1,5 +1,5 @@
 #   Lightspeed Restaurant Ruby Bindings
-#   API spec at http://staging-exact-integration.posios.com/PosServer/swagger-ui.html
+#   API spec at http://stating-integration.posios.com/PosServer/swagger-ui.html
 
 require 'excon'
 require 'json'
@@ -9,6 +9,7 @@ require 'lightspeed_restaurant/request'
 
 require 'lightspeed_restaurant/customer'
 require 'lightspeed_restaurant/customer_credit_change'
+require 'lightspeed_restaurant/customer_loyalty_card'
 require 'lightspeed_restaurant/receipt'
 require 'lightspeed_restaurant/company'
 

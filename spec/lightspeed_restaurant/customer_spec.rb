@@ -15,6 +15,11 @@ module LightspeedRestaurantClient
     context 'finding' do
       it_behaves_like 'a find operation' do
         let(:resource_id) { 2366 }
+
+        it 'includes customer cards' do
+          expect(found.customerCards.size).to eq 1
+          expect(found.customerCards.first['code']).to eq 'B1234'
+        end
       end
     end
 
