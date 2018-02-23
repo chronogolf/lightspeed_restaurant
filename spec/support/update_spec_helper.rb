@@ -8,6 +8,13 @@ shared_examples 'an update operation' do
     end
   end
 
+  it 'returns response from server' do
+    VCR.use_cassette("#{resource_name}/update") do
+      resource = described_class.update(resource_id, valid_params)
+      expect(resource.attributes.size).to be > valid_params.size
+    end
+  end
+
   it 'with invalid params' do
     VCR.use_cassette("#{resource_name}/update_invalid") do
       expect do
