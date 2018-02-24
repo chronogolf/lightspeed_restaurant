@@ -26,7 +26,7 @@ http_interactions:
       - Jetty(8.1.16.v20140903)
     body:
       encoding: UTF-8
-      string: '{"id": 2366, "uuid": "UUID-1234", "email": "test-update@test.com"}'
+      string: ''
     http_version:
   recorded_at: Fri, 04 Dec 2015 21:57:28 GMT
 recorded_with: VCR 3.0.0
