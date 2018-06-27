@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #   Lightspeed Restaurant Ruby Bindings
 #   API spec at http://stating-integration.posios.com/PosServer/swagger-ui.html
 
@@ -15,7 +17,7 @@ require 'lightspeed_restaurant/company'
 
 module LightspeedRestaurantClient
   class << self
-    attr_accessor :api_token, :base_uri
+    attr_accessor :api_token, :base_uri, :logger
 
     def get(path, body = {}, query = {})
       request(path, body, query).perform(method: :get)
@@ -36,7 +38,7 @@ module LightspeedRestaurantClient
     private
 
     def request(path, body, query)
-      Request.new(@base_uri, path, @api_token, body, query)
+      Request.new(@base_uri, path, @api_token, body, query, @logger)
     end
   end
 end

@@ -1,45 +1,54 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module LightspeedRestaurantClient
   describe Customer do
     setup_api_token
 
-    subject { LightspeedRestaurantClient::Customer }
+    let(:resource_name) { 'customer' }
+    let(:fake_logger) { FakeLogger.new }
 
-    context 'listing' do
+    before { LightspeedRestaurantClient.logger = fake_logger }
+
+    context 'when listing' do
       it_behaves_like 'a list operation' do
         let(:results_count) { 4 }
       end
     end
 
-    context 'finding' do
+    context 'when finding' do
       it_behaves_like 'a find operation' do
         let(:resource_id) { 2366 }
 
         it 'includes customer cards' do
-          expect(found.customerCards.size).to eq 1
-          expect(found.customerCards.first['code']).to eq 'B1234'
+          result = described_class.find(resource_id)
+          expect(result.customerCards.size).to eq 1
+          expect(result.customerCards.first['code']).to eq 'B1234'
         end
       end
     end
 
-    context 'creating' do
+    context 'when creating' do
       let(:valid_params) { { firstName: 'test5', lastName: 'test5', email: 'test5@test.com' } }
 
       it_behaves_like 'a create operation' do
-        let(:valid_params) { { firstName: 'test5', lastName: 'test5', email: 'test5@test.com' } }
         let(:invalid_params) { { email: '' } }
       end
 
-      it 'returns the customer id' do
-        VCR.use_cassette('customer/create', allow_playback_repeats: true) do
+      context 'when the creation is successful' do
+        around do |test|
+          VCR.use_cassette("#{resource_name}/create", allow_playback_repeats: true) { test.run }
+        end
+
+        it 'returns the customer id' do
           resource = described_class.create(valid_params)
           expect(resource.id).to eq 2617
         end
       end
     end
 
-    context 'updating' do
+    context 'when updating' do
       it_behaves_like 'an update operation' do
         let(:resource_id) { 2366 }
         let(:attribute_to_update) { 'email' }
@@ -48,7 +57,7 @@ module LightspeedRestaurantClient
       end
     end
 
-    context 'saving' do
+    context 'when saving' do
       it_behaves_like 'an save operation' do
         let(:resource_id) { 2366 }
         let(:attribute_to_update) { 'email' }

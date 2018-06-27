@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: http://stating-integration.posios.com/PosServer/rest/core/customer/2365/loyaltycard
+    uri: http://staging-integration.posios.com/PosServer/rest/core/customer/2365/creditchange
     body:
       encoding: UTF-8
-      string: '{"barcode":"B1234"}'
+      string: '{"change":10}'
     headers:
       User-Agent:
       - excon/0.45.4
@@ -24,7 +24,7 @@ http_interactions:
       - Jetty(8.1.16.v20140903)
     body:
       encoding: UTF-8
-      string: '{"code": "B1234", "companyId": 111, "creationUserId": 0, "customerId": 0, "customerUuid": "string", "expiryDate": 0, "generatedDate": 0, "lastUsedDate": 0, "lastValueAddedDate": 0, "mainEstablishmentMasterId": 0, "originalValue": 0, "redeemedValue": 0, "remainingValue": 0, "soldValue": 0, "status": "string", "type": "string", "uuid": "string"}'
+      string: '{"id":6704,"changeQuantity":10.0,"creationUserId":23175,"creationTime":"2016-02-25T19:19:15.234Z"}'
     http_version:
   recorded_at: Thu, 25 Feb 2016 20:44:40 GMT
 recorded_with: VCR 3.0.1

@@ -1,15 +1,56 @@
+require: rubocop-rspec
+
 Metrics/LineLength:
   Max: 120
 
+Metrics/ParameterLists:
+  Max: 6
+
 Metrics/MethodLength:
-  Max: 20
+  Max: 15
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+  ConsistentQuotesInMultiline: false
 
 Metrics/BlockLength:
+  Severity: warning
   Exclude:
-    - 'spec/**/*'
+    - spec/**/*
+
+Lint/HandleExceptions:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Max: 3
+
+Security/YAMLLoad:
+  Enabled: false
 
 Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'lib/**/*'
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'
+
+Metrics/ClassLength:
+  Max: 200
+  Severity: warning
+
+HttpPositionalArguments:
+  Enabled: false

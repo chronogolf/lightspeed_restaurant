@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://stating-integration.posios.com/PosServer/rest/core/customer
+    uri: http://staging-integration.posios.com/PosServer/rest/core/customer
     body:
       encoding: UTF-8
       string: '{"email":""}'

@@ -1,12 +1,17 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 module LightspeedRestaurantClient
   describe CustomerCreditChange do
     setup_api_token
 
-    subject { LightspeedRestaurantClient::CustomerCreditChange }
+    let(:resource_name) { 'creditchange' }
+    let(:fake_logger) { FakeLogger.new }
 
-    context 'listing' do
+    before { LightspeedRestaurantClient.logger = fake_logger }
+
+    context 'when listing' do
       it_behaves_like 'a list operation on an instantiated class' do
         let(:resource_params) { { customer_id: 2365 } }
         let(:resource_id)     { 2365 }
@@ -14,7 +19,7 @@ module LightspeedRestaurantClient
       end
     end
 
-    context 'creating' do
+    context 'when creating' do
       let(:resource_params) { { customer_id: 2365 } }
       let(:valid_params)    { { change: 10 } }
 
@@ -22,8 +27,12 @@ module LightspeedRestaurantClient
         let(:invalid_params)  { { change: 'hahaha' } }
       end
 
-      it 'returns the payload' do
-        VCR.use_cassette('customercreditchange/create', allow_playback_repeats: true) do
+      context 'when the credit change is valid' do
+        around do |test|
+          VCR.use_cassette("#{resource_name}/create", allow_playback_repeats: true) { test.run }
+        end
+
+        it 'returns the payload' do
           resource = described_class.new(resource_params).create(valid_params)
           expect(resource.changeQuantity).to eq 10.0
           expect(resource.id).to eq 6704
