@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module LightspeedRestaurantClient
   class Base
     def initialize(data = {})
@@ -16,8 +18,8 @@ module LightspeedRestaurantClient
 
     private
 
-    def convert_to_obj(h)
-      h.each do |key, value|
+    def convert_to_obj(hash)
+      hash.each do |key, value|
         self.class.send(:attr_accessor, key)
         instance_variable_set("@#{key}", value)
         convert_to_obj(value) if value.is_a? Hash

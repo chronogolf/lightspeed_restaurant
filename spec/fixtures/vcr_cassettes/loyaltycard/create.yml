@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/core/customer/2365/loyaltycard
+    body:
+      encoding: UTF-8
+      string: '{"barcode":"B1234"}'
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 201
+      message: ''
+    headers:
+      Date:
+      - Thu, 25 Feb 2016 20:44:40 GMT
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '{"code": "B1234", "companyId": 111, "creationUserId": 0, "customerId": 0, "customerUuid": "string", "expiryDate": 0, "generatedDate": 0, "lastUsedDate": 0, "lastValueAddedDate": 0, "mainEstablishmentMasterId": 0, "originalValue": 0, "redeemedValue": 0, "remainingValue": 0, "soldValue": 0, "status": "string", "type": "string", "uuid": "string"}'
+    http_version:
+  recorded_at: Thu, 25 Feb 2016 20:44:40 GMT
+recorded_with: VCR 3.0.1

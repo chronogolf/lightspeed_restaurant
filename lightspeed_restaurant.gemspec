@@ -1,11 +1,13 @@
-lib = File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lightspeed_restaurant/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'lightspeed_restaurant'
   spec.version       = LightspeedRestaurantClient::VERSION
-  spec.authors       = ['Olivier Buffon']
+  spec.authors       = ['Olivier Buffon, Laurent Cobos, Sybil Deboin']
   spec.email         = ['olivier@chronogolf.ca']
 
   spec.summary       = 'Ruby bindings for the Lightspeed Restaurant API'
@@ -29,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency('rspec')
   spec.add_development_dependency('rspec_junit_formatter')
   spec.add_development_dependency('rubocop')
+  spec.add_development_dependency('rubocop-rspec')
   spec.add_development_dependency('vcr')
   spec.add_development_dependency('webmock')
 end

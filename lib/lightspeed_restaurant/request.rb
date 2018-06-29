@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'lightspeed_restaurant/errors/lightspeed_restaurant_error'
 require 'lightspeed_restaurant/errors/api_error'
 require 'lightspeed_restaurant/errors/authentication_error'
@@ -7,16 +9,21 @@ require 'uri'
 
 module LightspeedRestaurantClient
   class Request
-    def initialize(base_uri, path, token, body = {}, query = {})
-      @base_uri   = base_uri || 'http://stating-integration.posios.com'
+    def initialize(base_uri, path, token, body = {}, query = {}, logger = nil)
+      @base_uri   = base_uri || 'http://staging-integration.posios.com'
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
       @path       = '/PosServer' + path
       @connection = Excon.new(@base_uri)
+      @logger = logger || begin
+        require 'logger'
+        ::Logger.new($stdout)
+      end
     end
 
     def perform(**args)
+      log_request(args[:method])
       response = @connection.request(args.merge(path: @path, headers: @headers, body: @body, query: @query))
       if [200, 201].include?(response.status)
         response.body
@@ -27,7 +34,14 @@ module LightspeedRestaurantClient
 
     private
 
+    def log_request(http_method)
+      @logger.info('request') do
+        "#{http_method} #{@base_uri}#{@path} : #{@query} - #{@body}"
+      end
+    end
+
     def handle_error(response)
+      @logger.error('response') { "Error : #{response.status} #{response.body}" }
       case response.status
       when 400
         raise invalid_request_error(response)

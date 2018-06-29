@@ -74,6 +74,14 @@ customer = LightspeedRestaurantClient::Customer.find(123)
 customer.destroy
 ```
 
+### Logs
+
+By default the logs are done on STDOUT.
+You can specify your own logger (it has to respond to info and error methods, like the Rails logger) :
+```ruby
+LightspeedRestaurantClient.logger = "YOUR_LOGGER"
+```
+
 ## Contributing
 
 Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/list'
 require 'lightspeed_restaurant/operations/find'

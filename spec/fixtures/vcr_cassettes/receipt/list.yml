@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://stating-integration.posios.com/PosServer/rest/financial/receipt?date=2016-02-23
+    uri: http://staging-integration.posios.com/PosServer/rest/financial/receipt?date=2016-02-23
     body:
       encoding: UTF-8
       string: "{}"
