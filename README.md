@@ -1,5 +1,3 @@
-![Chronogolf][crest]
-
 # Lightspeed Restaurant API Client
 
 [![Circle CI](https://circleci.com/gh/chronogolf/lightspeed_restaurant.svg?style=shield&circle-token=94ebc6c7495f5c0bbf9f6a89526395306f223b7e)](https://circleci.com/gh/chronogolf/lightspeed_restaurant)
@@ -90,11 +88,11 @@ LightspeedRestaurantClient.logger = "YOUR_LOGGER"
 Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
 
 ## About Us
-[![Chronogolf][crest]](http://www.chronogolf.com)
+[![Chronogolf][crest]](https://www.chronogolf.com)
 
-[Chronogolf](http://www.chronogolf.com)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
+[Chronogolf](https://www.chronogolf.com)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
 
-Find more informations at http://www.chronogolf.com/solutions
+Find more informations at https://pro.chronogolf.com
 
 ## Future Improvements
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
