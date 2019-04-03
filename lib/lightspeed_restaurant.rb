@@ -16,6 +16,7 @@ require 'lightspeed_restaurant/customer_establishment_order'
 require 'lightspeed_restaurant/receipt'
 require 'lightspeed_restaurant/company'
 require 'lightspeed_restaurant/payment_type'
+require 'lightspeed_restaurant/product_group'
 
 module LightspeedRestaurantClient
   class << self
