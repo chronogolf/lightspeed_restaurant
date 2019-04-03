@@ -12,7 +12,7 @@ module LightspeedRestaurantClient
       end
     end
 
-    def to_json(_opts)
+    def to_json
       attributes.to_json
     end
 

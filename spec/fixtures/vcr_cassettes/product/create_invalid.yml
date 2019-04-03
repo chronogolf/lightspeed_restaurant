@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/inventory/productgroup/57137/product
+    body:
+      encoding: UTF-8
+      string: '{"deliveryPrice":0,"deliveryPriceWithoutVat":0,"deliveryTaxClass":"","info":"info","name":"name","price":0,"priceWithoutVat":0,"sequence":0,"stockAmount":0,"takeawayPrice":0,"takeawayPriceWithoutVat":0,"visible":false}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 500
+      message: Server Error
+    headers:
+      Date:
+      - Wed, 03 Apr 2019 20:12:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d518e1eabbbd409074b6a0ebd35e0539f1554322356; expires=Thu, 02-Apr-20
+        20:12:36 GMT; path=/; domain=.posios.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c1db2c5cc98cce4-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"description":"An unexpected error occurred."}'
+    http_version: 
+  recorded_at: Wed, 03 Apr 2019 20:12:36 GMT
+recorded_with: VCR 4.0.0
