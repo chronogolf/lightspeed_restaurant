@@ -17,6 +17,7 @@ module LightspeedRestaurantClient
         JSON.parse(response)
       rescue JSON::ParserError => error
         raise error if response.to_i.zero?
+
         attributes.merge!(id: response.to_i)
       end
     end
