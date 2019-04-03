@@ -14,6 +14,7 @@ require 'lightspeed_restaurant/customer_credit_change'
 require 'lightspeed_restaurant/customer_loyalty_card'
 require 'lightspeed_restaurant/receipt'
 require 'lightspeed_restaurant/company'
+require 'lightspeed_restaurant/payment_type'
 
 module LightspeedRestaurantClient
   class << self

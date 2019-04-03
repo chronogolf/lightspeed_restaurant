@@ -11,7 +11,7 @@ module LightspeedRestaurantClient
       'Receipt'
     end
 
-    def self.resource_path
+    def self.default_resource_path
       "/rest/financial/#{resource_name.downcase}"
     end
   end

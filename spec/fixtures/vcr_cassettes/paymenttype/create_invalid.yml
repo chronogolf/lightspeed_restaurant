@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/core/paymenttype
+    body:
+      encoding: UTF-8
+      string: '{"name":""}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 500
+      message: Server Error
+    headers:
+      Date:
+      - Wed, 03 Apr 2019 15:48:22 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '61'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d5b88188406ef5c15320e075c4ea6b85e1554306502; expires=Thu, 02-Apr-20
+        15:48:22 GMT; path=/; domain=.posios.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c1c2fb72fafccd0-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"code":"11402","description":"Type id is a mandatory field"}'
+    http_version: 
+  recorded_at: Wed, 03 Apr 2019 15:48:22 GMT
+recorded_with: VCR 4.0.0

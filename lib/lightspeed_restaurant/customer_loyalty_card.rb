@@ -17,8 +17,8 @@ module LightspeedRestaurantClient
       'LoyaltyCard'
     end
 
-    def resource_path
-      "#{Customer.resource_path}/#{customer_id}/#{self.class.resource_name.downcase}"
+    def default_resource_path
+      "#{Customer.default_resource_path}/#{customer_id}/#{self.class.resource_name.downcase}"
     end
   end
 end

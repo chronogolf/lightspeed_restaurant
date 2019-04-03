@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/core/paymenttype
+    body:
+      encoding: UTF-8
+      string: '{"description":"Credit card","name":"Visa credit card","typeId":4}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 03 Apr 2019 15:48:21 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '4'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9c530ccaec699e9fe19980054769ac351554306501; expires=Thu, 02-Apr-20
+        15:48:21 GMT; path=/; domain=.posios.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c1c2fb2af809212-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '8219'
+    http_version: 
+  recorded_at: Wed, 03 Apr 2019 15:48:22 GMT
+recorded_with: VCR 4.0.0
