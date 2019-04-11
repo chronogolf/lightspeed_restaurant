@@ -21,7 +21,7 @@ module LightspeedRestaurantClient
     attr_accessor :api_token, :base_uri, :logger
 
     def default_configuration
-      Configuration.new(@api_token, @base_uri, @logger)
+      Configuration.new(@api_token, @base_uri)
     end
 
     def get(path, query = {}, configuration = nil)
@@ -44,7 +44,7 @@ module LightspeedRestaurantClient
 
     def request(path, body, query, configuration = nil)
       configuration ||= default_configuration
-      Request.new(configuration.base_uri, path, configuration.api_token, body, query, configuration.logger)
+      Request.new(configuration.base_uri, path, configuration.api_token, body, query, @logger)
     end
   end
 end
