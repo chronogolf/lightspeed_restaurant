@@ -14,7 +14,7 @@ shared_context 'operation context' do
 
     attr_accessor :id
 
-    def self.resource_path
+    def self.default_resource_path
       '/spec'
     end
 
