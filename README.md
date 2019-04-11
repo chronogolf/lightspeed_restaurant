@@ -39,6 +39,13 @@ customer.save
 ```
 That's it!
 
+### Using a custom API configuration per action
+Each action support a configuration object as the last param, allows you to setup `api_token`, `base_uri`
+Sample usage:
+```ruby
+LightspeedRestaurantClient::Customer.all(LightspeedRestaurantClient.default_configuration.with(api_token: 'MY_OTHER_TOKEN', base_uri: 'other_ls_resto_uri'))
+```
+
 ### Available operations
 
 #### List
