@@ -3,8 +3,8 @@
 module LightspeedRestaurantClient
   module Operations
     module Create
-      def create(attributes)
-        response = LightspeedRestaurantClient.post(resource_path, attributes)
+      def create(attributes, configuration = nil)
+        response = LightspeedRestaurantClient.post(resource_path, attributes, {}, configuration)
         payload = build_payload(attributes, response)
         return new(payload) if is_a?(Class)
 
