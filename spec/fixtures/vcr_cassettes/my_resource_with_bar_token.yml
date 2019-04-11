@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://custom.com/PosServer/my_resource
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - bar
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 11 Apr 2019 10:27:25 GMT
+      Content-Type:
+      - text/html;charset=ISO-8859-1
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d78c10989e2c51cbc0570f704e27a9a9a1554978445; expires=Fri, 10-Apr-20
+        10:27:25 GMT; path=/; domain=.custom.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Cache-Control:
+      - must-revalidate,no-cache,no-store
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c5c4494e97ca8bd-CDG
+    body:
+      encoding: ASCII-8BIT
+      string: ""
+    http_version: 
+  recorded_at: Thu, 11 Apr 2019 10:27:25 GMT
+recorded_with: VCR 4.0.0

@@ -8,6 +8,7 @@ require 'json'
 
 require 'lightspeed_restaurant/version'
 require 'lightspeed_restaurant/request'
+require 'lightspeed_restaurant/configuration'
 
 require 'lightspeed_restaurant/customer'
 require 'lightspeed_restaurant/customer_credit_change'
@@ -19,26 +20,31 @@ module LightspeedRestaurantClient
   class << self
     attr_accessor :api_token, :base_uri, :logger
 
-    def get(path, body = {}, query = {})
-      request(path, body, query).perform(method: :get)
+    def default_configuration
+      Configuration.new(@api_token, @base_uri, @logger)
     end
 
-    def post(path, body = {}, query = {})
-      request(path, body, query).perform(method: :post)
+    def get(path, query = {}, configuration = nil)
+      request(path, {}, query, configuration).perform(method: :get)
     end
 
-    def put(path, body = {}, query = {})
-      request(path, body, query).perform(method: :put)
+    def post(path, body = {}, query = {}, configuration = nil)
+      request(path, body, query, configuration).perform(method: :post)
     end
 
-    def delete(path, body = {}, query = {})
-      request(path, body, query).perform(method: :delete)
+    def put(path, body = {}, query = {}, configuration = nil)
+      request(path, body, query, configuration).perform(method: :put)
+    end
+
+    def delete(path, query = {}, configuration = nil)
+      request(path, {}, query, configuration).perform(method: :delete)
     end
 
     private
 
-    def request(path, body, query)
-      Request.new(@base_uri, path, @api_token, body, query, @logger)
+    def request(path, body, query, configuration = nil)
+      configuration ||= default_configuration
+      Request.new(configuration.base_uri, path, configuration.api_token, body, query, configuration.logger)
     end
   end
 end

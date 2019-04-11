@@ -3,8 +3,8 @@
 module LightspeedRestaurantClient
   module Operations
     module Save
-      def save
-        LightspeedRestaurantClient.put(self.class.resource_path + "/#{id}", self)
+      def save(configuration = nil)
+        LightspeedRestaurantClient.put(self.class.resource_path + "/#{id}", self, {}, configuration)
         self
       end
     end
