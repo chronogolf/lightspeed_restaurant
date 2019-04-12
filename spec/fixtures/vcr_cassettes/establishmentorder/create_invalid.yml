@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/onlineordering/customer/32767/establishmentorder
+    body:
+      encoding: UTF-8
+      string: '{"companyId":14445,"description":"HA payment","deliveryDate":"2019-03-31T18:00:00.299Z","note":"HA
+        payment","customerId":32767,"numberOfCustomers":1,"orderItems":[{"amount":1,"productId":154115,"totalPrice":0,"totalPriceWithoutVat":0,"unitPrice":0,"unitPriceWithoutVat":0}],"orderPayments":[{"amount":-10,"paymentTypeId":8196,"paymentTypeTypeId":16},{"amount":10,"paymentTypeId":8195,"paymentTypeTypeId":4}],"status":"ACCEPTED"}'
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 03 Apr 2019 18:20:24 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d798fcceda7a18860da8998c8efe5fb821554315624; expires=Thu, 02-Apr-20
+        18:20:24 GMT; path=/; domain=.posios.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c1d0e6d8b71cce0-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":["type may not be empty"]}'
+    http_version: 
+  recorded_at: Wed, 03 Apr 2019 18:20:24 GMT
+recorded_with: VCR 4.0.0

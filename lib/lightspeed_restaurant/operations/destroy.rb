@@ -4,7 +4,7 @@ module LightspeedRestaurantClient
   module Operations
     module Destroy
       def destroy(configuration = nil)
-        JSON.parse(LightspeedRestaurantClient.delete(self.class.resource_path + "/#{id}", {}, configuration))
+        JSON.parse(LightspeedRestaurantClient.delete(self.class.default_resource_path + "/#{id}", {}, configuration))
         self
       end
     end

@@ -4,15 +4,15 @@ require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurantClient
-  class Receipt < LightspeedRestaurantClient::Base
+  class ProductGroup < LightspeedRestaurantClient::Base
     extend Operations::List
 
     def self.resource_name
-      'Receipt'
+      'ProductGroup'
     end
 
     def self.default_resource_path
-      "/rest/financial/#{resource_name.downcase}"
+      "/rest/inventory/#{resource_name.downcase}"
     end
   end
 end

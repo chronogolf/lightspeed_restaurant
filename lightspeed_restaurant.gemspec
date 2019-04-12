@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'lightspeed_restaurant'
   spec.version       = LightspeedRestaurantClient::VERSION
   spec.authors       = ['Olivier Buffon, Laurent Cobos, Sybil Deboin']
-  spec.email         = ['olivier@chronogolf.ca']
+  spec.email         = ['developers@chronogolf.com']
 
   spec.summary       = 'Ruby bindings for the Lightspeed Restaurant API'
   spec.description   = 'Lightspeed Restaurant is point of sale that helps bars, restaurants, '\

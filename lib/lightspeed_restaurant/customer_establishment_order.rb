@@ -2,11 +2,9 @@
 
 require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/create'
-require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurantClient
-  class CustomerLoyaltyCard < LightspeedRestaurantClient::Base
-    include Operations::List
+  class CustomerEstablishmentOrder < LightspeedRestaurantClient::Base
     include Operations::Create
 
     def initialize(customer_id)
@@ -14,11 +12,11 @@ module LightspeedRestaurantClient
     end
 
     def self.resource_name
-      'LoyaltyCard'
+      'EstablishmentOrder'
     end
 
     def default_resource_path
-      "#{Customer.default_resource_path}/#{customer_id}/#{self.class.resource_name.downcase}"
+      "/rest/onlineordering/customer/#{customer_id}/#{self.class.resource_name.downcase}"
     end
   end
 end

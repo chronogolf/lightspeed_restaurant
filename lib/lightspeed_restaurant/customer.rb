@@ -19,7 +19,7 @@ module LightspeedRestaurantClient
       'Customer'
     end
 
-    def self.resource_path
+    def self.default_resource_path
       "/rest/core/#{resource_name.downcase}"
     end
   end

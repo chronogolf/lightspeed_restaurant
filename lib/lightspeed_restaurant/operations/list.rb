@@ -12,6 +12,10 @@ module LightspeedRestaurantClient
 
       private
 
+      def resource_path
+        respond_to?(:list_resource_path) ? list_resource_path : default_resource_path
+      end
+
       def instantiate(records)
         records.map do |record|
           is_a?(Class) ? new(record) : self.class.new(record)
