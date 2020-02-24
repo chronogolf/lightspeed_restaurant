@@ -5,6 +5,7 @@ require 'lightspeed_restaurant/errors/api_error'
 require 'lightspeed_restaurant/errors/authentication_error'
 require 'lightspeed_restaurant/errors/invalid_request_error'
 require 'lightspeed_restaurant/errors/not_found_error'
+require 'lightspeed_restaurant/errors/rate_limit_error'
 require 'uri'
 
 module LightspeedRestaurantClient
@@ -51,6 +52,8 @@ module LightspeedRestaurantClient
         raise unauthorized_error(response)
       when 404
         raise not_found_error(response)
+      when 429
+        raise rate_limit_error(response)
       else
         raise response_object_error(response)
       end
@@ -66,17 +69,22 @@ module LightspeedRestaurantClient
 
     def response_object_error(response)
       APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
-                   response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
       InvalidRequestError.new(JSON.parse(response.body)['description'],
-                              response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
     end
 
     def authentication_error(response)
       AuthenticationError.new(JSON.parse(response.body)['description'],
-                              response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
+    end
+
+    def rate_limit_error(response)
+      RateLimitError.new(JSON.parse(response.body)['description'],
+        response.status, response.body, response.headers)
     end
   end
 end
