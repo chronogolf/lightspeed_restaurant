@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.2.2 / 2020-02-24
+## 3.3.1 / 2020-02-24
 
 - Introducing `RateLimitError` when status code is `429`
 
