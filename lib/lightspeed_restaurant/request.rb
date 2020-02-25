@@ -5,12 +5,17 @@ require 'lightspeed_restaurant/errors/api_error'
 require 'lightspeed_restaurant/errors/authentication_error'
 require 'lightspeed_restaurant/errors/invalid_request_error'
 require 'lightspeed_restaurant/errors/not_found_error'
+require 'lightspeed_restaurant/errors/rate_limit_error'
 require 'uri'
 
 module LightspeedRestaurantClient
   class Request
+    STAGING_URL = 'http://staging-integration.posios.com'
+
+    attr_reader :base_uri, :path, :token, :body, :headers, :query, :logger, :connection
+
     def initialize(base_uri, path, token, body = {}, query = {}, logger = nil)
-      @base_uri   = base_uri || 'http://staging-integration.posios.com'
+      @base_uri   = base_uri || STAGING_URL
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
@@ -24,7 +29,7 @@ module LightspeedRestaurantClient
 
     def perform(**args)
       log_request(args[:method])
-      response = @connection.request(args.merge(path: @path, headers: @headers, body: @body, query: @query))
+      response = connection.request(args.merge(path: path, headers: headers, body: body, query: query))
       if [200, 201].include?(response.status)
         response.body
       else
@@ -35,13 +40,13 @@ module LightspeedRestaurantClient
     private
 
     def log_request(http_method)
-      @logger.info('request') do
-        "#{http_method} #{@base_uri}#{@path} : #{@query} - #{@body}"
+      logger.info('request') do
+        "#{http_method} #{base_uri}#{path} : #{query} - #{body}"
       end
     end
 
     def handle_error(response)
-      @logger.error('response') { "Error : #{response.status} #{response.body}" }
+      logger.error('response') { "Error : #{response.status} #{response.body}" }
       case response.status
       when 400
         raise invalid_request_error(response)
@@ -51,6 +56,8 @@ module LightspeedRestaurantClient
         raise unauthorized_error(response)
       when 404
         raise not_found_error(response)
+      when 429
+        raise rate_limit_error(response)
       else
         raise response_object_error(response)
       end
@@ -66,17 +73,22 @@ module LightspeedRestaurantClient
 
     def response_object_error(response)
       APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
-                   response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
       InvalidRequestError.new(JSON.parse(response.body)['description'],
-                              response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
     end
 
     def authentication_error(response)
       AuthenticationError.new(JSON.parse(response.body)['description'],
-                              response.status, response.body, response.headers)
+        response.status, response.body, response.headers)
+    end
+
+    def rate_limit_error(response)
+      RateLimitError.new(JSON.parse(response.body)['description'],
+        response.status, response.body, response.headers)
     end
   end
 end
