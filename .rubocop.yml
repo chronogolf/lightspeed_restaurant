@@ -21,7 +21,7 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
 
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 
 RSpec/MultipleExpectations:
@@ -51,6 +51,3 @@ Style/PercentLiteralDelimiters:
 Metrics/ClassLength:
   Max: 200
   Severity: warning
-
-HttpPositionalArguments:
-  Enabled: false
