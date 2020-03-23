@@ -3,14 +3,6 @@ name: CI
 on: [push]
 
 jobs:
-
-  - uses: actions/cache@v1
-  with:
-    path: vendor/bundle
-    key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-    restore-keys: |
-      ${{ runner.os }}-gems-
-
   tests:
     runs-on: ubuntu-latest
     strategy:
@@ -28,8 +20,8 @@ jobs:
     - name: Sets up the environment
       run: |
         gem install bundler
-        bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
+        bundle install
 
     - name: Runs tests
       run: rspec
@@ -51,8 +43,8 @@ jobs:
     - name: Sets up the environment
       run: |
         gem install bundler
-        bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
+        bundle install
 
     - name: Runs Rubocop
       run: rubocop
