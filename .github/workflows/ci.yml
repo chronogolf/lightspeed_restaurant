@@ -1,0 +1,48 @@
+name: CI
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [2.6]
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Sets up the Ruby version
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+
+    - name: Sets up the environment
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Runs tests
+      run: rspec
+
+  rubocop:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [2.6]
+
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Sets up the Ruby version
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+
+    - name: Sets up the environment
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Runs Rubocop
+      run: rubocop
