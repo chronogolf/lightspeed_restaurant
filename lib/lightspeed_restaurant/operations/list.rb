@@ -5,8 +5,8 @@ module LightspeedRestaurantClient
     module List
       def list(params = {}, configuration = nil)
         response = JSON.parse(LightspeedRestaurantClient.get(resource_path, params, configuration))
-        results = response.is_a?(Array) ? response : response['results']
-        instantiate(results)
+        response = handle_list_response(response)
+        instantiate(response)
       end
       alias all list
 
@@ -14,6 +14,15 @@ module LightspeedRestaurantClient
 
       def resource_path
         respond_to?(:list_resource_path) ? list_resource_path : default_resource_path
+      end
+
+      def handle_list_response(response)
+        case response
+        when Hash
+          response['results']
+        else
+          response
+        end
       end
 
       def instantiate(records)

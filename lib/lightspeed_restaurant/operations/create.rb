@@ -4,21 +4,22 @@ module LightspeedRestaurantClient
   module Operations
     module Create
       def create(attributes, configuration = nil)
-        response = LightspeedRestaurantClient.post(default_resource_path, attributes, {}, configuration)
-        payload = build_payload(attributes, response)
-        return new(payload) if is_a?(Class)
+        response = JSON.parse(LightspeedRestaurantClient.post(default_resource_path, attributes, {}, configuration))
+        response = handle_create_response(response, attributes)
+        return new(response) if is_a?(Class)
 
-        self.class.new(payload)
+        self.class.new(response)
       end
 
       private
 
-      def build_payload(attributes, response)
-        JSON.parse(response)
-      rescue JSON::ParserError => error
-        raise error if response.to_i.zero?
-
-        attributes.merge!(id: response.to_i)
+      def handle_create_response(response, attributes)
+        case response
+        when Numeric
+          attributes.merge(id: response)
+        else
+          response
+        end
       end
     end
   end

@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency('excon', '~> 0.71.0')
-  spec.add_dependency('json', '~> 1.8.3')
+  spec.add_dependency('json', '~> 2.3')
 
   spec.add_development_dependency('pry')
   spec.add_development_dependency('rake')
