@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.2 / 2020-03-20
+
+- Fix CVE-2020-10663 (Update JSON dependency to 2.3)
+
 ## 3.3.1 / 2020-02-24
 
 - Introducing `RateLimitError` when status code is `429`
