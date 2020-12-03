@@ -29,7 +29,7 @@ module LightspeedRestaurantClient
     end
 
     def get(path, query = {}, configuration = nil)
-      request(path, {}, query, configuration).perform(method: :get)
+      request(path, {}, query, configuration).perform(method: :get, read_timeout: 120) # default timeout is 60
     end
 
     def post(path, body = {}, query = {}, configuration = nil)
