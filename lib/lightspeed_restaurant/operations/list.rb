@@ -3,8 +3,10 @@
 module LightspeedRestaurantClient
   module Operations
     module List
-      def list(params = {}, configuration = nil)
-        response = JSON.parse(LightspeedRestaurantClient.get(resource_path, params, configuration))
+      def list(params = {}, configuration = nil, read_timeout: nil)
+        response = JSON.parse(
+          LightspeedRestaurantClient.get(resource_path, params, configuration, read_timeout)
+        )
         response = handle_list_response(response)
         instantiate(response)
       end

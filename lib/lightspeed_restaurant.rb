@@ -28,8 +28,8 @@ module LightspeedRestaurantClient
       Configuration.new(@api_token, @base_uri)
     end
 
-    def get(path, query = {}, configuration = nil)
-      request(path, {}, query, configuration).perform(method: :get)
+    def get(path, query = {}, configuration = nil, read_timeout: nil)
+      request(path, {}, query, configuration).perform(method: :get, read_timeout: read_timeout)
     end
 
     def post(path, body = {}, query = {}, configuration = nil)
