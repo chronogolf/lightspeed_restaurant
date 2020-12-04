@@ -9,10 +9,6 @@ module LightspeedRestaurantClient
     include Operations::List
     include Operations::Create
 
-    def initialize(customer_id)
-      super
-    end
-
     def self.resource_name
       'LoyaltyCard'
     end

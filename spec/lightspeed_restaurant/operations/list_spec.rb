@@ -5,10 +5,12 @@ require_relative 'operation_context'
 
 module LightspeedRestaurantClient
   describe Operations::List do
-    include_context 'operation context'
+    include_context 'with operation context'
 
     it 'supports custom configuration' do
-      expect(LightspeedRestaurantClient).to receive(:get).with('/spec', { name: 'foo' }, custom_configuration).and_return([].to_json)
+      allow(LightspeedRestaurantClient).to(
+        receive(:get).with('/spec', { name: 'foo' }, custom_configuration).and_return([].to_json)
+      )
       FakeResource.list({ name: 'foo' }, custom_configuration)
     end
   end

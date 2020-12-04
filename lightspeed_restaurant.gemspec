@@ -12,15 +12,18 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Ruby bindings for the Lightspeed Restaurant API'
   spec.description   = 'Lightspeed Restaurant is a Point Of Sale that helps bars, restaurants, '\
-                       'and cafés deliver a better customer experience and run a more profitable business. '\
-                       'See https://www.lightspeedhq.com/products/restaurant/ for details'
+                       'and cafés deliver a better customer experience and run a more profitable '\
+                       'business. See https://www.lightspeedhq.com/products/restaurant/ for details'
   spec.homepage      = 'https://github.com/chronogolf/lightspeed_restaurant'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files         =
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
+
+  spec.required_ruby_version = '>= 2.6.5'
 
   spec.add_dependency('excon', '~> 0.71.0')
   spec.add_dependency('json', '~> 2.3')

@@ -19,7 +19,7 @@ module LightspeedRestaurantClient
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
-      @path       = '/PosServer' + path
+      @path       = "/PosServer#{path}"
       @connection = Excon.new(@base_uri)
       @logger = logger || begin
         require 'logger'
@@ -29,7 +29,9 @@ module LightspeedRestaurantClient
 
     def perform(**args)
       log_request(args[:method])
-      response = connection.request(args.merge(path: path, headers: headers, body: body, query: query))
+      response = connection.request(
+        args.merge(path: path, headers: headers, body: body, query: query)
+      )
       if [200, 201].include?(response.status)
         response.body
       else
@@ -45,6 +47,7 @@ module LightspeedRestaurantClient
       end
     end
 
+    # rubocop:disable Metrics/AbcSize
     def handle_error(response)
       logger.error('response') { "Error : #{response.status} #{response.body}" }
       case response.status
@@ -62,9 +65,10 @@ module LightspeedRestaurantClient
         raise response_object_error(response)
       end
     end
+    # rubocop:enable Metrics/AbcSize
 
-    def unauthorized_error(response)
-      UnauthorizedError.new('Unauthorized resource', response.status, response.body, response.headers)
+    def unauthorized_error(res)
+      UnauthorizedError.new('Unauthorized resource', res.status, res.body, res.headers)
     end
 
     def not_found_error(response)
@@ -73,22 +77,22 @@ module LightspeedRestaurantClient
 
     def response_object_error(response)
       APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
-        response.status, response.body, response.headers)
+                   response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
       InvalidRequestError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def authentication_error(response)
       AuthenticationError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def rate_limit_error(response)
       RateLimitError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                         response.status, response.body, response.headers)
     end
   end
 end

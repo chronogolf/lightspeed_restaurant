@@ -18,13 +18,13 @@ describe LightspeedRestaurantClient do
   end
 
   context 'with api token passed as argument' do
+    let(:configuration) { { api_token: 'bar', base_uri: 'http://custom.com' } }
+
     it 'uses it even if set globally' do
       VCR.use_cassette('my_resource_with_bar_token') do
         client.api_token = 'foo'
         client.base_uri = 'http://default.com'
-        client.get(
-          '/my_resource', {}, client.default_configuration.with(api_token: 'bar', base_uri: 'http://custom.com')
-        )
+        client.get('/my_resource', {}, client.default_configuration.with(configuration))
       end
     end
   end

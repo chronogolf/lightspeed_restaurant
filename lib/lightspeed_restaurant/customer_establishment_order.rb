@@ -7,10 +7,6 @@ module LightspeedRestaurantClient
   class CustomerEstablishmentOrder < LightspeedRestaurantClient::Base
     include Operations::Create
 
-    def initialize(customer_id)
-      super
-    end
-
     def self.resource_name
       'EstablishmentOrder'
     end

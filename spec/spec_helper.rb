@@ -5,7 +5,7 @@ require 'lightspeed_restaurant'
 require 'webmock/rspec'
 require 'vcr'
 
-Dir[File.expand_path('support/**/*.rb', File.dirname(__FILE__))].each do |f|
+Dir[File.expand_path('support/**/*.rb', File.dirname(__FILE__))].sort.each do |f|
   require f
 end
 

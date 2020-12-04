@@ -7,16 +7,16 @@ module LightspeedRestaurantClient
   class ProductGroupProduct < LightspeedRestaurantClient::Base
     include Operations::Create
 
-    def initialize(product_group_id)
-      super
-    end
-
     def self.resource_name
       'Product'
     end
 
     def default_resource_path
-      "#{ProductGroup.default_resource_path}/#{product_group_id}/#{self.class.resource_name.downcase}"
+      [
+        ProductGroup.default_resource_path,
+        product_group_id,
+        self.class.resource_name.downcase
+      ].join('/')
     end
   end
 end
