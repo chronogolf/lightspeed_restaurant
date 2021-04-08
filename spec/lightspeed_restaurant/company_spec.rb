@@ -21,7 +21,7 @@ module LightspeedRestaurantClient
       it_behaves_like 'a find operation' do
         let(:resource_id) { 14160 }
 
-        it 'returns the company datas' do
+        it "returns the company's data" do
           result = described_class.find(resource_id)
           expect(result.id).to eq 14160
         end
