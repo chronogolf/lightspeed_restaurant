@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.3 / 2021-04-08
+
+- Add `find` endpoint for the company 
+
 ## 3.3.2 / 2020-03-20
 
 - Fix CVE-2020-10663 (Update JSON dependency to 2.3)
