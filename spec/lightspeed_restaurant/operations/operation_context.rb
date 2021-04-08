@@ -27,8 +27,8 @@ shared_context 'operation context' do
       { id: id }.merge(@attributes || {})
     end
 
-    def ==(value)
-      value.class == self.class && value.attributes == attributes
+    def ==(other)
+      other.class == self.class && other.attributes == attributes
     end
   end
 

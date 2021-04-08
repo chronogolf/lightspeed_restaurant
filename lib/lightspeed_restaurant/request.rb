@@ -29,7 +29,8 @@ module LightspeedRestaurantClient
 
     def perform(**args)
       log_request(args[:method])
-      response = connection.request(args.merge(path: path, headers: headers, body: body, query: query))
+      response = connection.request(args.merge(path: path, headers: headers, body: body,
+                                               query: query))
       if [200, 201].include?(response.status)
         response.body
       else
@@ -64,7 +65,8 @@ module LightspeedRestaurantClient
     end
 
     def unauthorized_error(response)
-      UnauthorizedError.new('Unauthorized resource', response.status, response.body, response.headers)
+      UnauthorizedError.new('Unauthorized resource', response.status, response.body,
+                            response.headers)
     end
 
     def not_found_error(response)
@@ -73,22 +75,22 @@ module LightspeedRestaurantClient
 
     def response_object_error(response)
       APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
-        response.status, response.body, response.headers)
+                   response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
       InvalidRequestError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def authentication_error(response)
       AuthenticationError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def rate_limit_error(response)
       RateLimitError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                         response.status, response.body, response.headers)
     end
   end
 end

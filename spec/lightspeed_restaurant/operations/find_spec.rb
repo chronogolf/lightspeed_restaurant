@@ -8,7 +8,8 @@ module LightspeedRestaurantClient
     include_context 'operation context'
 
     it 'supports custom configuration' do
-      expect(LightspeedRestaurantClient).to receive(:get).with('/spec/Z51', {}, custom_configuration).and_return({}.to_json)
+      expect(LightspeedRestaurantClient).to receive(:get).with('/spec/Z51', {},
+                                                               custom_configuration).and_return({}.to_json)
       FakeResource.find('Z51', custom_configuration)
     end
   end

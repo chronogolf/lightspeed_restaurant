@@ -12,7 +12,7 @@ module LightspeedRestaurantClient
     before { LightspeedRestaurantClient.logger = fake_logger }
 
     context 'when creating' do
-      let(:resource_params) { { product_group_id: 57137 } }
+      let(:resource_params) { { product_group_id: 57_137 } }
       let(:valid_params)    do
         {
           deliveryPrice: 0,
@@ -39,7 +39,7 @@ module LightspeedRestaurantClient
       it 'returns the payload' do
         VCR.use_cassette("#{resource_name}/create", allow_playback_repeats: true) do
           resource = described_class.new(resource_params).create(valid_params)
-          expect(resource.id).to eq 154141
+          expect(resource.id).to eq 154_141
         end
       end
     end
