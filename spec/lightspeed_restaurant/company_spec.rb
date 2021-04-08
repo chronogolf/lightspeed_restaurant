@@ -16,5 +16,16 @@ module LightspeedRestaurantClient
         let(:results_count) { 1 }
       end
     end
+
+    context 'when finding' do
+      it_behaves_like 'a find operation' do
+        let(:resource_id) { 14160 }
+
+        it 'returns the company datas' do
+          result = described_class.find(resource_id)
+          expect(result.id).to eq 14160
+        end
+      end
+    end
   end
 end

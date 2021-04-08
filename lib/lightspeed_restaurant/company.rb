@@ -5,6 +5,7 @@ require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurantClient
   class Company < LightspeedRestaurantClient::Base
+    extend Operations::Find
     extend Operations::List
 
     def self.resource_name
