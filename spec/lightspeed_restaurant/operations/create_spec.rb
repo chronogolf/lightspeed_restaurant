@@ -8,7 +8,8 @@ module LightspeedRestaurantClient
     include_context 'operation context'
 
     it 'supports custom configuration' do
-      expect(LightspeedRestaurantClient).to receive(:post).with('/spec', { foo: :bar }, {}, custom_configuration).and_return({}.to_json)
+      expect(LightspeedRestaurantClient).to receive(:post).with('/spec', { foo: :bar }, {},
+                                                                custom_configuration).and_return({}.to_json)
       FakeResource.create({ foo: :bar }, custom_configuration)
     end
   end

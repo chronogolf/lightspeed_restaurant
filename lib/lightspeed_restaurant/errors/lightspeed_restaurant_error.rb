@@ -2,12 +2,7 @@
 
 module LightspeedRestaurantClient
   class LightspeedRestaurantClientError < StandardError
-    attr_reader :message
-    attr_reader :http_status
-    attr_reader :http_body
-    attr_reader :http_headers
-    attr_reader :request_id
-    attr_reader :json_body
+    attr_reader :message, :http_status, :http_body, :http_headers, :request_id, :json_body
 
     def initialize(message = nil, http_status = nil, http_body = nil, http_headers = nil)
       @message = message
