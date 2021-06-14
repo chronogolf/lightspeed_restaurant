@@ -94,9 +94,9 @@ LightspeedRestaurantClient.logger = "YOUR_LOGGER"
 Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_restaurant.
 
 ## About Us
-[![Chronogolf][crest]](https://www.chronogolf.com)
+[![Chronogolf by Lightspeed][crest]](https://www.chronogolf.com)
 
-[Chronogolf](https://www.chronogolf.com)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
+[Chronogolf by Lightspeed](https://www.chronogolf.com)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
 
 Find more informations at https://pro.chronogolf.com
 
@@ -109,4 +109,4 @@ Find more informations at https://pro.chronogolf.com
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-[crest]: https://cdn2.chronogolf.com/assets/logos/Github%20-%20Header.png
+[crest]: ./logo.png
