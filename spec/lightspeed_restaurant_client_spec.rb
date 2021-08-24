@@ -23,7 +23,8 @@ describe LightspeedRestaurantClient do
         client.api_token = 'foo'
         client.base_uri = 'http://default.com'
         client.get(
-          '/my_resource', {}, client.default_configuration.with(api_token: 'bar', base_uri: 'http://custom.com')
+          '/my_resource', {}, client.default_configuration.with(api_token: 'bar',
+                                                                base_uri: 'http://custom.com')
         )
       end
     end

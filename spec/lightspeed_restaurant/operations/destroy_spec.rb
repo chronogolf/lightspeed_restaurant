@@ -10,7 +10,8 @@ module LightspeedRestaurantClient
     it 'supports custom configuration' do
       resource = FakeResource.new
       resource.id = 'Z51'
-      expect(LightspeedRestaurantClient).to receive(:delete).with('/spec/Z51', {}, custom_configuration).and_return({}.to_json)
+      expect(LightspeedRestaurantClient).to receive(:delete).with('/spec/Z51', {},
+                                                                  custom_configuration).and_return({}.to_json)
       resource.destroy(custom_configuration)
     end
   end
