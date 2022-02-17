@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://staging-integration.posios.com/PosServer/rest/inventory/productgroup/57137/product
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.62.0
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 03 Apr 2019 18:46:47 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '747'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d6da75032e01113428857de6a159f1f1c1554317207; expires=Thu, 02-Apr-20
+        18:46:47 GMT; path=/; domain=.posios.com; HttpOnly
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Max-Age:
+      - '3600'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4c1d35126d3e9272-EWR
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":57134},{"id":57135},{"id":57136},{"id":57137},{"id":59109},{"id":62306}]'
+    http_version: 
+  recorded_at: Wed, 03 Apr 2019 18:46:47 GMT
+recorded_with: VCR 4.0.0
