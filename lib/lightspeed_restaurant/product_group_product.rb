@@ -6,6 +6,7 @@ require 'lightspeed_restaurant/operations/create'
 module LightspeedRestaurantClient
   class ProductGroupProduct < LightspeedRestaurantClient::Base
     include Operations::Create
+    include Operations::List
 
     def initialize(product_group_id)
       super

@@ -8,11 +8,11 @@ module LightspeedRestaurantClient
 
     let(:resource_name) { 'product' }
     let(:fake_logger) { FakeLogger.new }
+    let(:resource_params) { { product_group_id: 57137 } }
 
     before { LightspeedRestaurantClient.logger = fake_logger }
 
     context 'when creating' do
-      let(:resource_params) { { product_group_id: 57137 } }
       let(:valid_params)    do
         {
           deliveryPrice: 0,
@@ -40,6 +40,16 @@ module LightspeedRestaurantClient
         VCR.use_cassette("#{resource_name}/create", allow_playback_repeats: true) do
           resource = described_class.new(resource_params).create(valid_params)
           expect(resource.id).to eq 154141
+        end
+      end
+    end
+
+    context "when listing" do
+      it 'lists the products in the group' do
+        VCR.use_cassette("#{resource_name}/list", allow_playback_repeats: true) do
+          products = described_class.new(resource_params).list({})
+          expect(products.length).to eq 6
+          expect(products.first.id).to eq 57134
         end
       end
     end
