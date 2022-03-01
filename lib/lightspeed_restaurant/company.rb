@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'lightspeed_restaurant/base'
+require 'lightspeed_restaurant/operations/find'
 require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurantClient
