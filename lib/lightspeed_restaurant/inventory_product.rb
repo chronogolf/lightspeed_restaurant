@@ -2,19 +2,17 @@
 
 require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/find'
-require 'lightspeed_restaurant/operations/list'
 
 module LightspeedRestaurantClient
-  class Company < LightspeedRestaurantClient::Base
+  class InventoryProduct < LightspeedRestaurantClient::Base
     extend Operations::Find
-    extend Operations::List
 
     def self.resource_name
-      'Company'
+      'Inventory/Product'
     end
 
     def self.default_resource_path
-      "/rest/core/#{resource_name.downcase}"
+      "/rest/#{resource_name.downcase}"
     end
   end
 end

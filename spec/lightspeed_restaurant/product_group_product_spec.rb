@@ -43,15 +43,5 @@ module LightspeedRestaurantClient
         end
       end
     end
-
-    context "when listing" do
-      it 'lists the products in the group' do
-        VCR.use_cassette("#{resource_name}/list", allow_playback_repeats: true) do
-          products = described_class.new(resource_params).list({})
-          expect(products.length).to eq 6
-          expect(products.first.id).to eq 57134
-        end
-      end
-    end
   end
 end

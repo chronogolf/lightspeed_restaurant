@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.0 / 2021-04-08
+
+- Add `find` endpoint for the InventoryProduct 
+
 ## 3.3.3 / 2021-04-08
 
 - Add `find` endpoint for the company 
