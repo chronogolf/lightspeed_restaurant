@@ -2,6 +2,10 @@
 
 ## 3.3.3 / 2021-04-08
 
+- Add `find` endpoint for the InventoryProduct 
+
+## 3.3.3 / 2021-04-08
+
 - Add `find` endpoint for the company 
 
 ## 3.3.2 / 2020-03-20
