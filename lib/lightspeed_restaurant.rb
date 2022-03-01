@@ -9,7 +9,6 @@ require 'json'
 require 'lightspeed_restaurant/version'
 require 'lightspeed_restaurant/request'
 require 'lightspeed_restaurant/configuration'
-
 require 'lightspeed_restaurant/customer'
 require 'lightspeed_restaurant/customer_credit_change'
 require 'lightspeed_restaurant/customer_loyalty_card'
@@ -19,6 +18,7 @@ require 'lightspeed_restaurant/company'
 require 'lightspeed_restaurant/payment_type'
 require 'lightspeed_restaurant/product_group'
 require 'lightspeed_restaurant/product_group_product'
+require 'lightspeed_restaurant/inventory_product'
 
 module LightspeedRestaurantClient
   class << self

@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://staging-integration.posios.com/PosServer/rest/inventory/product/184948
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.45.4
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Fri, 04 Dec 2015 21:22:44 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Server:
+      - Jetty(8.1.16.v20140903)
+    body:
+      encoding: UTF-8
+      string: '{"id":184948,"name":"House Account Product - Chronogolf Only","visible":false,"imageLocation":"","kitchenImageLocation":"","cfdImageLocation":"","price":0.0000,"priceWithoutVat":0.0,"takeawayPrice":0.0000,"takeawayPriceWithoutVat":0.0,"deliveryPrice":0.0000,"deliveryPriceWithoutVat":0.0,"productType":"","sku":"","taxClass":"BUILTIN-0.0","deliveryTaxClass":"BUILTIN-0.0","takeawayTaxClass":"BUILTIN-0.0","stockAmount":0,"groupIds":[57137],"info":"DO NOT USE - Chronogolf payment methods"}'
+    http_version:
+  recorded_at: Fri, 04 Dec 2015 21:22:44 GMT
+recorded_with: VCR 3.0.0
