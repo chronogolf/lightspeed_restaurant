@@ -100,7 +100,7 @@ Pull requests are welcome on GitHub at https://github.com/chronogolf/lightspeed_
 
 [Chronogolf by Lightspeed](https://www.lightspeedhq.com/golf/)'s mission is to facilitate the interactions between golf managers and golf players. We are building software that allows golf directors to better manage their course, together with a marketplace to find & book games in real-time. We are constantly innovating and trying to challenge the status quo.
 
-Find more informations at [https://www.lightspeedhq.com/golf/](https://www.lightspeedhq.com/golf/)
+Learn more at [https://www.lightspeedhq.com/golf/](https://www.lightspeedhq.com/golf/)
 
 ## Future Improvements
 - Improve destroy operation to handle destroy by passing an ID (or an array of IDs)
