@@ -6,7 +6,7 @@ describe LightspeedRestaurantClient do
   subject(:client) { described_class }
 
   it 'has a version number' do
-    expect(client::VERSION).not_to be nil
+    expect(client::VERSION).not_to be_nil
   end
 
   it 'uses global configuration' do

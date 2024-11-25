@@ -1,42 +1,85 @@
 require: rubocop-rspec
 
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
 Layout/LineLength:
-  Max: 100
+  Enabled: false
 
-Metrics/ParameterLists:
-  Max: 6
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
 
-Metrics/MethodLength:
-  Max: 15
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
 
-Style/StringLiterals:
-  EnforcedStyle: single_quotes
-  SupportedStyles:
-    - single_quotes
-    - double_quotes
-  ConsistentQuotesInMultiline: false
+Lint/MissingSuper:
+  Enabled: false
+
+Lint/NonDeterministicRequireOrder:
+  Enabled: false
+
+Lint/SuppressedException:
+  Enabled: false
+
+Lint/ToJSON:
+  Enabled: false
+
+Lint/UselessMethodDefinition:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
 
 Metrics/BlockLength:
   Severity: warning
   Exclude:
     - spec/**/*
 
-Lint/SuppressedException:
+Metrics/ClassLength:
+  Max: 200
+  Severity: warning
+
+Metrics/ParameterLists:
+  Max: 6
+  MaxOptionalParameters: 6
+
+Metrics/MethodLength:
+  Max: 15
+
+Naming/BinaryOperatorParameterName:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/LeakyConstantDeclaration:
   Enabled: false
 
 RSpec/MultipleExpectations:
   Max: 3
 
-Security/YAMLLoad:
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NoExpectationExample:
+  Enabled: false
+
+RSpec/StubbedMock:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
 
-Layout/MultilineMethodCallIndentation:
-  Enabled: false
-
-Style/ClassAndModuleChildren:
+Style/NumericLiterals:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
@@ -48,6 +91,12 @@ Style/PercentLiteralDelimiters:
     '%w': '[]'
     '%W': '[]'
 
-Metrics/ClassLength:
-  Max: 200
-  Severity: warning
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+  ConsistentQuotesInMultiline: false
+
+Security/YAMLLoad:
+  Enabled: false

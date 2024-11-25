@@ -33,6 +33,6 @@ shared_context 'operation context' do
   end
 
   def custom_configuration
-    @config ||= LightspeedRestaurantClient.default_configuration.with(api_token: 'CUSTOM-1234')
+    @custom_configuration ||= LightspeedRestaurantClient.default_configuration.with(api_token: 'CUSTOM-1234')
   end
 end
