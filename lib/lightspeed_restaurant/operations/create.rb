@@ -14,9 +14,10 @@ module LightspeedRestaurantClient
       private
 
       def handle_create_response(response, attributes)
-        case response
-        when Numeric
+        case when response == Numeric
           attributes.merge(id: response)
+        when LightspeedRestaurantClient::ExternalPaymentProvider
+          attributes.merge(id: response["data"].first["id"])
         else
           response
         end

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.0 /2024-11-25
+
+- Add endpoints for the ExternalPaymentProvider
+
 ## 3.4.0 / 2021-04-08
 
 - Add `find` endpoint for the InventoryProduct 
