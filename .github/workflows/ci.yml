@@ -28,7 +28,6 @@ jobs:
 
     - name: Set up the environment
       run: |
-        gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
 
@@ -60,7 +59,6 @@ jobs:
 
     - name: Set up the environment
       run: |
-        gem install bundler
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
 
