@@ -16,6 +16,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
 
     - name: Ruby gem cache
       uses: actions/cache@v3
@@ -47,6 +48,7 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
 
     - name: Ruby gem cache
       uses: actions/cache@v3
