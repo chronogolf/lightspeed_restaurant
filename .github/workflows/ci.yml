@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Set up the Ruby version
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
 
@@ -44,7 +44,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Set up the Ruby version
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
 
