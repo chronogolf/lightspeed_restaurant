@@ -25,13 +25,13 @@ module LightspeedRestaurantClient
         it 'includes external payment providers' do
           result = described_class.find(resource_id)
           expect(result.data).to eq({
-            'companyID' => 1,
-            'creationDate' => '2024-11-17:28:02.467Z',
-            'id' => 1,
-            'name' => 'House Account (External)',
-            'updateDate' => '2024-11-17:28:02.467Z',
-            'url' => 'https://dummy-payment-url.com'
-          })
+                                      'companyID' => 1,
+                                      'creationDate' => '2024-11-17:28:02.467Z',
+                                      'id' => 1,
+                                      'name' => 'House Account (External)',
+                                      'updateDate' => '2024-11-17:28:02.467Z',
+                                      'url' => 'https://dummy-payment-url.com'
+                                    })
         end
       end
     end
