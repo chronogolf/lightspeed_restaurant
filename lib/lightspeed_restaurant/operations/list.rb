@@ -19,7 +19,7 @@ module LightspeedRestaurantClient
       def handle_list_response(response)
         case response
         when Hash
-          LightspeedRestaurantClient::ExternalPaymentProvider ? response['data'] : response['results']
+          self == LightspeedRestaurantClient::ExternalPaymentProvider ? response['data'] : response['results']
         else
           response
         end

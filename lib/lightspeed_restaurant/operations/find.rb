@@ -11,7 +11,7 @@ module LightspeedRestaurantClient
       private
 
       def id_path(id)
-        return id.to_s if LightspeedRestaurantClient::ExternalPaymentProvider
+        return id.to_s if self == LightspeedRestaurantClient::ExternalPaymentProvider
 
         "/#{id}"
       end
