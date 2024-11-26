@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ['3.3', '3.4.0-preview2']
+        ruby: '3.3'
 
     steps:
     - uses: actions/checkout@master
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby: ['3.3', '3.4.0-preview2']
+        ruby: '3.3'
 
     steps:
     - uses: actions/checkout@master
