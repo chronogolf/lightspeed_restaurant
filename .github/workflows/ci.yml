@@ -15,7 +15,7 @@ jobs:
     - name: Set up the Ruby version
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.3'
+        ruby-version: ['3.3', '3.4.0-preview2']
         bundler-cache: true
 
     - name: Ruby gem cache
@@ -46,7 +46,7 @@ jobs:
     - name: Set up the Ruby version
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.3'
+        ruby-version: ['3.3', '3.4.0-preview2']
         bundler-cache: true
 
     - name: Ruby gem cache
