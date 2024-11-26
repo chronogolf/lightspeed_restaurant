@@ -17,7 +17,7 @@ module LightspeedRestaurantClient
         if response.is_a?(Numeric)
           attributes.merge(id: response)
         elsif self == LightspeedRestaurantClient::ExternalPaymentProvider
-          response.merge(id: response['data'].first['id'])
+          response.merge(id: response['data']['id'])
         else
           response
         end
