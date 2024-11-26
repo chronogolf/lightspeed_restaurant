@@ -19,7 +19,7 @@ module LightspeedRestaurantClient
       @headers    = { 'Content-Type' => 'application/json', 'X-Auth-Token' => token }
       @body       = body.to_json
       @query      = query
-      @path       = '/PosServer' + path
+      @path       = "/PosServer#{path}"
       @connection = Excon.new(@base_uri)
       @logger = logger || begin
         require 'logger'
@@ -73,22 +73,22 @@ module LightspeedRestaurantClient
 
     def response_object_error(response)
       APIError.new("Invalid response object from API: #{JSON.parse(response.body)['description']}",
-        response.status, response.body, response.headers)
+                   response.status, response.body, response.headers)
     end
 
     def invalid_request_error(response)
       InvalidRequestError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def authentication_error(response)
       AuthenticationError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                              response.status, response.body, response.headers)
     end
 
     def rate_limit_error(response)
       RateLimitError.new(JSON.parse(response.body)['description'],
-        response.status, response.body, response.headers)
+                         response.status, response.body, response.headers)
     end
   end
 end
