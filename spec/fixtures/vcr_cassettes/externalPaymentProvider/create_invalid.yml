@@ -1,0 +1,31 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/partner/v1/externalPaymentProvider/
+    body:
+      encoding: UTF-8
+      string: '{"companyId":""}'
+    headers:
+      User-Agent:
+      - excon/0.91.0
+      Accept:
+      - "*/*"
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Mon, 25 Nov 2024 16:53:00 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":"illegal_state","title":"CompanyId must be > 0!","detail":"","httpStatus":500,"legacyJSONRPCCode":1402}]}'
+  recorded_at: Mon, 25 Nov 2024 16:52:59 GMT
+recorded_with: VCR 6.3.1
