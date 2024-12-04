@@ -23,13 +23,13 @@ module LightspeedRestaurantClient
 
         it 'includes the notification URL' do
           result = described_class.find(resource_id)
-          expect(result.notificationUrl).to eq "https://localhost"
+          expect(result.notificationUrl).to eq 'https://localhost'
         end
       end
     end
 
     context 'when creating' do
-      let(:valid_params) { { notificationUrl: 'https://localhost', type: "RECEIPT_CREATED", timeToLiveInSeconds: 900} }
+      let(:valid_params) { { notificationUrl: 'https://localhost', type: 'RECEIPT_CREATED', timeToLiveInSeconds: 900 } }
       let(:invalid_params) { { notificationUrl: '' } }
 
       context 'with invalid params' do
