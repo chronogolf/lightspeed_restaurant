@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/v1/webhooks/subscriptions/17/renew
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.91.0
+      Accept:
+      - "*/*"
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 20:22:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Dns-Prefetch-Control:
+      - 'off'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type, X-Resto-Context
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Expose-Headers:
+      - Content-Disposition
+      Access-Control-Max-Age:
+      - '3600'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=DCynTUSnJdgWEmJ6MDRF0pj1XiCokMfEfPqr9Ku0KSk-1733170935-1.0.1.1-PMJB4nESonyAqAPp5JPJfOPHcQunkEYoDw2NtCwKQi.9J7IDGeU3iOAFi1oHzVG8kHTLpOo50Z4YerwSqtcM5g;
+        path=/; expires=Mon, 02-Dec-24 20:52:15 GMT; domain=.posios.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=U_Dv2DShy_.FEFKetv1EFZqzTSdndvRhWHyZEWcHbbg-1733170936-1.0.1.1-QdZM4X5GqVGzLnMbNN8erJrPly1wsrLgFxoMoPXNGMN91I_7W_r2beozfHVo21tuvYqGLSy484Dt_mvzGs0evQ;
+        path=/; expires=Mon, 02-Dec-24 20:52:16 GMT; domain=.lightspeedapis.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=zopIQWNgucIY6m3v8pJKqQj1JC2.m41wg_fVk5MEpVI-1733170936-1.0.1.1-Ijnubh6pn1CtcBkB0iwrOn.8Rdiw1OEUxCVE7zzl_hr0GFzRBHWYKfs.mk__YpveIp8eEBJbpgYEK1boK51EMw;
+        path=/; expires=Mon, 02-Dec-24 20:52:16 GMT; domain=.posios.com; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Shopkeep-Request-Id:
+      - 8036b15b-3882-48d5-baba-6d12b0157abb
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ebe072bd839ac39-YYZ
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":"not_allowed","title":"Renewal is not allowed before
+        2024-12-02T21:10:41.943Z for webhook subscription with id 17","detail":"","httpStatus":403,"legacyJSONRPCCode":11021}]}'
+  recorded_at: Mon, 02 Dec 2024 20:22:16 GMT
+recorded_with: VCR 6.3.1

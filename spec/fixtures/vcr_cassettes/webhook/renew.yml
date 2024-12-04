@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/v1/webhooks/subscriptions/17/renew
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - excon/0.91.0
+      Accept:
+      - "*/*"
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 200
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 20:28:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Dns-Prefetch-Control:
+      - 'off'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      X-Download-Options:
+      - noopen
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type, X-Resto-Context
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Expose-Headers:
+      - Content-Disposition
+      Access-Control-Max-Age:
+      - '3600'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=f_d6jQP8EwdsJgyNNWmUuWAkbDqVUcn3ItuR.CXUrjI-1733171313-1.0.1.1-G7E1Y9MywpJUay7R5OnRPt1gOxz.t2lTyMTlPqJbT1iLK58UNbRHzYMPeB7Jjuro19xudk1_dnE7IXD9QbTs6w;
+        path=/; expires=Mon, 02-Dec-24 20:58:33 GMT; domain=.posios.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=szMagsUvcFoijfMZZgyxOOfmve2e.Qxr4MaBn0o3aFY-1733171313-1.0.1.1-2M4HPU85I0C8unXhykcQ7WOgsl769GWZbx35OfdLTg64kO8F55ODKx7THc.Kux2HMaqckBiYrA7SLQQcrRD0Tg;
+        path=/; expires=Mon, 02-Dec-24 20:58:33 GMT; domain=.lightspeedapis.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=jyt70oRyl9fOkWkaWuqylABOA1nbHBOzyeWcFyY9Y6w-1733171313-1.0.1.1-VDQVeTcdAldCwqT3_w10mPABIO75zeXpHjvz_T70CwMn4Z9tcKffwVTBInF.KcZiZiHpl_8XexQJo03bOHRl_A;
+        path=/; expires=Mon, 02-Dec-24 20:58:33 GMT; domain=.posios.com; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Shopkeep-Request-Id:
+      - '024089d5-8349-4a13-94c9-bc09913bb029'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ebe105f3cf3ac7b-YYZ
+    body:
+      encoding: ASCII-8BIT
+      string: '{
+            "id": 17,
+            "notificationUrl": "https://localhost",
+            "type": "RECEIPT_CREATED",
+            "renewalTime": "2023-08-18T00:31:49.123Z",
+            "expirationTime": "2023-08-19T00:31:49.123Z",
+            "timeToLiveInSeconds": 900,
+            "apiKey": "JlQqcvgJkk6jXhmC2HDqkPoJtN3mR1b7mPF"
+        }'
+  recorded_at: Mon, 02 Dec 2024 20:28:33 GMT
+recorded_with: VCR 6.3.1
