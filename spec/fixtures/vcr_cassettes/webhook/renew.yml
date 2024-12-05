@@ -25,18 +25,6 @@ http_interactions:
       - application/json;charset=UTF-8
       Connection:
       - keep-alive
-      X-Dns-Prefetch-Control:
-      - 'off'
-      X-Frame-Options:
-      - SAMEORIGIN
-      Strict-Transport-Security:
-      - max-age=15552000; includeSubDomains
-      X-Download-Options:
-      - noopen
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
