@@ -1,0 +1,31 @@
+---
+http_interactions:
+  - request:
+      method: get
+      uri: http://staging-integration.posios.com/PosServer/rest/v1/webhooks/subscriptions
+      body:
+        encoding: UTF-8
+        string: "{}"
+      headers:
+        Authorization:
+          - Bearer {ACCESS_TOKEN}
+        User-Agent:
+          - excon/0.91.0
+        Accept:
+          - "*/*"
+        Content-Type:
+          - application/json
+    response:
+      status:
+        code: 200
+        message: OK
+      headers:
+        Content-Type:
+          - application/json
+        Date:
+          - Wed, 16 Aug 2023 21:07:07 GMT
+      body:
+        encoding: UTF-8
+        string: '{"data":[{"id":1920,"notificationUrl":"https://localhost","type":"RECEIPT_UPDATED","renewalTime":"2023-08-16T21:07:07.026Z","expirationTime":"2023-08-17T21:07:07.026Z","timeToLiveInSeconds":900,"apiKey":"cywAOYUFIDrEcsF61fEritN3mR1b7mPF"},{"id":1921,"notificationUrl":"https://localhost","type":"RECEIPT_CREATED","renewalTime":"2023-08-17T00:31:49.123Z","expirationTime":"2023-08-18T00:31:49.123Z","timeToLiveInSeconds":900,"apiKey":"d4V9rULfWJlQqcvgJkk6jXhmC2HDqkPo"}]}'
+    recorded_at: Wed, 16 Aug 2023 21:07:07 GMT
+recorded_with: VCR 6.3.1

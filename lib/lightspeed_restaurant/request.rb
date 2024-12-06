@@ -6,6 +6,7 @@ require 'lightspeed_restaurant/errors/authentication_error'
 require 'lightspeed_restaurant/errors/invalid_request_error'
 require 'lightspeed_restaurant/errors/not_found_error'
 require 'lightspeed_restaurant/errors/rate_limit_error'
+require 'lightspeed_restaurant/errors/unauthorized_error'
 require 'uri'
 
 module LightspeedRestaurantClient

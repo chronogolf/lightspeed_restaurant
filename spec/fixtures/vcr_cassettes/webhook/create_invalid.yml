@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://staging-integration.posios.com/PosServer/rest/v1/webhooks/subscriptions
+    body:
+      encoding: UTF-8
+      string: '{"notificationUrl":""}'
+    headers:
+      User-Agent:
+      - excon/0.91.0
+      Accept:
+      - "*/*"
+      Content-Type:
+      - application/json
+      X-Auth-Token:
+      - API_TOKEN_VALUE
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 02 Dec 2024 19:56:34 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '131'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - x-auth-token, x-requested-with, content-type, X-Resto-Context
+      Access-Control-Allow-Methods:
+      - POST, PUT, PATCH, GET, OPTIONS, DELETE
+      Access-Control-Expose-Headers:
+      - Content-Disposition
+      Access-Control-Max-Age:
+      - '3600'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Jhj25McX4EvwCJ8wl2JmegeQ5YPmXHlErTiqxcPhO84-1733169394-1.0.1.1-vtkiAQOD8B1xrz0C6OYdsBethVz6zyhB0FK6WtwxnKuZYjno0ctwyGNiA0qQmW_OuHnHYFWzsSIpjBkS189qTA;
+        path=/; expires=Mon, 02-Dec-24 20:26:34 GMT; domain=.posios.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=V7UrXyTSqwZVAxT0F5gcn2D8qe8aHWOOANPOeHXfaYY-1733169394-1.0.1.1-1e7fAcdDxxwyJE9r9nWeZ_rl.3pG.gt7YvAbs4XdUBysD60t8qoQ2jlctKGlCeFOQo8clH32_AAnt2OjM2SJ6g;
+        path=/; expires=Mon, 02-Dec-24 20:26:34 GMT; domain=.lightspeedapis.com; HttpOnly;
+        Secure; SameSite=None, __cf_bm=QnmZJz5zm5hCLpHIv1eB06b.zO2bRBOA_2i6wOLUm4Q-1733169394-1.0.1.1-vJzHIOSPBeYiaL5o71_aybMrrcvvKKsU4Xu0NDy0dkF2VVBFSWGQBB_poj0cP5NvFtjlrT2LUiLVNO_55kd2Wg;
+        path=/; expires=Mon, 02-Dec-24 20:26:34 GMT; domain=.posios.com; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Shopkeep-Request-Id:
+      - 3c7d0219-9573-468c-8bfc-dd7c8e178c32
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8ebde1865b8bab04-YYZ
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":["notificationUrl must start with https://","timeToLiveInSeconds
+        must be greater than 0 seconds","type may not be null"]}'
+  recorded_at: Mon, 02 Dec 2024 19:56:34 GMT
+recorded_with: VCR 6.3.1
