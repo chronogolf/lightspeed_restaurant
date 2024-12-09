@@ -20,6 +20,7 @@ require 'lightspeed_restaurant/product_group'
 require 'lightspeed_restaurant/receipt'
 require 'lightspeed_restaurant/request'
 require 'lightspeed_restaurant/version'
+require 'lightspeed_restaurant/webhook'
 
 module LightspeedRestaurantClient
   class << self
