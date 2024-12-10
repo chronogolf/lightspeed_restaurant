@@ -1,12 +1,18 @@
 # Changelog
 
+## 3.5.0 / 2024-12-10
+
+- Add `externalPaymentProvider` resource endpoints
+- Add `webhook` resource endpoints
+- Upgrade ruby version to 3.3.6
+
 ## 3.4.0 / 2021-04-08
 
-- Add `find` endpoint for the InventoryProduct 
+- Add `find` endpoint for the InventoryProduct
 
 ## 3.3.3 / 2021-04-08
 
-- Add `find` endpoint for the company 
+- Add `find` endpoint for the company
 
 ## 3.3.2 / 2020-03-20
 
