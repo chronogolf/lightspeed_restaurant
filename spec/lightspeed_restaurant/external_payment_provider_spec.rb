@@ -70,7 +70,7 @@ module LightspeedRestaurantClient
       end
 
       it 'updates' do
-        resource = described_class.update(resource_id, {username: 'updated_name'})
+        resource = described_class.update(resource_id, { username: 'updated_name' })
         expect(resource.username).to eq 'updated_name'
       end
     end
