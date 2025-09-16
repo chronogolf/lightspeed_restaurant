@@ -61,5 +61,18 @@ module LightspeedRestaurantClient
         end
       end
     end
+
+    context 'when updating' do
+      let(:resource_id) { 1 }
+
+      around do |test|
+        VCR.use_cassette("#{resource_name}/update", allow_playback_repeats: true) { test.run }
+      end
+
+      it "updates" do
+        resource = described_class.update(resource_id, {username: "updated_name"})
+        expect(resource.username).to eq "updated_name"
+      end
+    end
   end
 end
