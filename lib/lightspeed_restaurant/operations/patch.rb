@@ -3,7 +3,7 @@
 module LightspeedRestaurantClient
   module Operations
     module Patch
-      def update(id, attributes, configuration = nil)
+      def patch(id, attributes, configuration = nil)
         updated_object = new(attributes)
         LightspeedRestaurantClient.patch(default_resource_path + "/#{id}", updated_object, {}, configuration)
         updated_object

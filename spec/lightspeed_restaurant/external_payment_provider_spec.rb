@@ -70,7 +70,7 @@ module LightspeedRestaurantClient
       end
 
       it 'updates' do
-        resource = described_class.update(resource_id, { url: 'https://preprod.chronogolf.com/test' })
+        resource = described_class.patch(resource_id, { url: 'https://preprod.chronogolf.com/test' })
         expect(resource.url).to eq 'https://preprod.chronogolf.com/test'
       end
     end
