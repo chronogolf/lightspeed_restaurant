@@ -42,6 +42,10 @@ module LightspeedRestaurantClient
       request(path, body, query, configuration).perform(method: :put)
     end
 
+    def patch(path, body = {}, query = {}, configuration = nil)
+      request(path, body, query, configuration).perform(method: :patch)
+    end
+
     def delete(path, query = {}, configuration = nil)
       request(path, {}, query, configuration).perform(method: :delete)
     end

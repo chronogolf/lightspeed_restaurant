@@ -1,7 +1,7 @@
 ---
 http_interactions:
   - request:
-      method: put
+      method: patch
       uri: http://staging-integration.posios.com/PosServer/rest/partner/v1/externalPaymentProvider//1
       body:
         encoding: UTF-8
@@ -26,7 +26,7 @@ http_interactions:
           - Jetty(8.1.16.v20140903)
       body:
         encoding: UTF-8
-        string: '{"data":{"username":"updated_username","name":"House Account (External)","url":"https://dummy-payment-url.com","creationDate":"2024-11-17:28:02.467Z","updateDate":"2024-11-17:28:02.467Z","companyID":1}}'
+        string: '{"data": {"id": 528,"name": "House Account (External)","url": "https://preprod.chronogolf.com/test","creationDate": "2024-12-17T16:38:27.456Z","updateDate": "2025-09-18T17:03:53.498Z","companyId": 14445}}'
       http_version:
     recorded_at: Fri, 04 Dec 2015 21:57:28 GMT
 recorded_with: VCR 3.0.0

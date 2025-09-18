@@ -62,16 +62,16 @@ module LightspeedRestaurantClient
       end
     end
 
-    context 'when updating' do
+    context 'when patching' do
       let(:resource_id) { 1 }
 
       around do |test|
-        VCR.use_cassette("#{resource_name}/update", allow_playback_repeats: true) { test.run }
+        VCR.use_cassette("#{resource_name}/patch", allow_playback_repeats: true) { test.run }
       end
 
       it 'updates' do
-        resource = described_class.update(resource_id, { username: 'updated_name' })
-        expect(resource.username).to eq 'updated_name'
+        resource = described_class.update(resource_id, { url: 'https://preprod.chronogolf.com/test' })
+        expect(resource.url).to eq 'https://preprod.chronogolf.com/test'
       end
     end
   end
