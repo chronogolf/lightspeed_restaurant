@@ -4,12 +4,14 @@ require 'lightspeed_restaurant/base'
 require 'lightspeed_restaurant/operations/list'
 require 'lightspeed_restaurant/operations/find'
 require 'lightspeed_restaurant/operations/create'
+require 'lightspeed_restaurant/operations/patch'
 
 module LightspeedRestaurantClient
   class ExternalPaymentProvider < LightspeedRestaurantClient::Base
     extend Operations::Create
     extend Operations::Find
     extend Operations::List
+    extend Operations::Patch
 
     def self.resource_name
       'externalPaymentProvider'
