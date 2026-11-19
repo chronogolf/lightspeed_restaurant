@@ -24,7 +24,7 @@ module LightspeedRestaurantClient
       let(:valid_params)    { { change: 10 } }
 
       it_behaves_like 'a create operation on an instantiated class' do
-        let(:invalid_params)  { { change: 'hahaha' } }
+        let(:invalid_params) { { change: 'hahaha' } }
       end
 
       context 'when the credit change is valid' do
